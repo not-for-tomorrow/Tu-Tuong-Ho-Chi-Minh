@@ -1,3 +1,4 @@
+// components/Booktype/BookTypeSection.jsx
 import React, {
   forwardRef,
   useImperativeHandle,
@@ -12,9 +13,9 @@ import {
   Environment,
   Center,
   ContactShadows,
-  Html,
 } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
+import { motion as motionDOM } from "framer-motion";
 
 // ✅ Component tải GLTF model
 function GLTFModel({ url, scale = 1 }) {
@@ -22,23 +23,30 @@ function GLTFModel({ url, scale = 1 }) {
   return <primitive object={scene.clone()} scale={scale} />;
 }
 
-// ✅ Nút điều hướng
+// Component ngôi sao
+const StarIcon = ({ className = "w-6 h-6" }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+  </svg>
+);
+
+// ✅ Nút điều hướng mới với theme đỏ-vàng
 function ArrowButton({ onClick, direction = "right" }) {
   const isRight = direction === "right";
   return (
     <button
       onClick={onClick}
-      aria-label={isRight ? "Next product" : "Previous product"}
-      className="absolute top-1/2 -translate-y-1/2 z-20 bg-white/80 hover:bg-white text-gray-900 shadow-md rounded-full size-12 grid place-items-center transition"
-      style={{ [isRight ? "right" : "left"]: "0.75rem" }}
+      aria-label={isRight ? "Sản phẩm tiếp theo" : "Sản phẩm trước"}
+      className="absolute top-1/2 -translate-y-1/2 z-20 bg-gradient-to-br from-yellow-400 to-yellow-500 hover:from-yellow-300 hover:to-yellow-400 text-red-900 shadow-lg rounded-full w-14 h-14 grid place-items-center transition-all hover:scale-110 border-2 border-yellow-300"
+      style={{ [isRight ? "right" : "left"]: "1rem" }}
     >
       <svg
-        width="22"
-        height="22"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         fill="none"
         stroke="currentColor"
-        strokeWidth="2.2"
+        strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
         className={isRight ? "" : "rotate-180"}
@@ -55,44 +63,40 @@ const BookTypeSection = forwardRef(function BookTypeSection(
     models = [
       {
         url: "models/Notebook1.glb",
-        name: "Sản phẩm 1",
-        description: "Mô tả 1",
+        name: "Sổ tay Đạo đức Cách mạng",
+        description: "Ghi chép về phẩm chất cần, kiệm, liêm, chính",
         scale: 5,
       },
       {
         url: "models/Notebook2.glb",
-        name: "Sản phẩm 2",
-        description: "Mô tả 2",
+        name: "Sổ tay Học tập",
+        description: "Tổng hợp tư tưởng về giáo dục và rèn luyện",
         scale: 0.006,
       },
       {
         url: "models/Notebook3.glb",
-        name: "Sản phẩm 3",
-        description: "Mô tả 3",
+        name: "Sổ tay Đoàn kết",
+        description: "Tinh thần đại đoàn kết dân tộc",
         scale: 0.0055,
       },
       {
         url: "models/Notebook4.glb",
-        name: "Sản phẩm 3",
-        description: "Mô tả 3",
+        name: "Sổ tay Di chúc",
+        description: "Những lời dặn dò của Bác với thế hệ mai sau",
         scale: 8,
       },
     ],
     className = "",
     style,
     canvasHeight = "100%",
-    background = "linear-gradient(180deg, #f8fafc 0%, #ffffff 60%)",
   },
   ref
 ) {
   const [index, setIndex] = useState(0);
   const count = models.length;
   const containerRef = useRef(null);
-
-  // 👉 Lưu hướng điều hướng: 1 = next, -1 = prev
   const dirRef = useRef(1);
 
-  // 👉 Điều khiển từ bên ngoài
   const next = () => {
     dirRef.current = 1;
     setIndex((i) => (i + 1) % count);
@@ -103,74 +107,170 @@ const BookTypeSection = forwardRef(function BookTypeSection(
   };
   useImperativeHandle(ref, () => ({ next, prev }));
 
-  // 🔧 Lưu index trước đó để biết item nào rời trung tâm
   const prevIndexRef = useRef(0);
   useEffect(() => {
     prevIndexRef.current = index;
   }, [index]);
 
-  // 🔧 Lưu rotateY cuối cùng của mỗi item để "đóng băng" khi không entering/leaving
-  const lastRotateYRef = useRef(
-    models.map((_, i) => (i === 0 ? Math.PI : 0)) // sản phẩm 1 luôn 180°
-  );
+  const lastRotateYRef = useRef(models.map((_, i) => (i === 0 ? Math.PI : 0)));
+
+  // Quotes của Bác Hồ cho mỗi sản phẩm
+  const quotes = [
+    "Cần, kiệm, liêm, chính, chí công vô tư",
+    "Học để làm việc, làm người, làm cán bộ",
+    "Đoàn kết, đoàn kết, đại đoàn kết",
+    "Việc gì lợi cho dân phải hết sức làm",
+  ];
 
   return (
     <section
+      id="booktype-section"
       ref={containerRef}
-      className={`relative w-full h-full overflow-hidden ${className}`}
-      style={{ background, ...style }}
+      className={`relative w-full overflow-hidden ${className}`}
+      style={style}
     >
-      {/* 🧾 Thông tin sản phẩm */}
-      <div className="absolute left-4 top-4 z-20 p-3 rounded-md bg-white/80 shadow-sm backdrop-blur-sm max-w-[60%]">
-        <div className="text-sm uppercase tracking-wide text-sky-700 font-semibold">
-          {models[index]?.name || "Sản phẩm"}
-        </div>
-        {models[index]?.description && (
-          <div className="text-gray-700 text-sm mt-1">
-            {models[index].description}
-          </div>
-        )}
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gradient-to-b from-red-900 via-red-800 to-red-900"></div>
+
+      {/* Decorative pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23fbbf24' fill-opacity='0.5'%3E%3Cpath d='M40 10l4 8.1 8.9 1.3-6.5 6.3 1.5 8.9L40 30l-7.9 4.1 1.5-8.9-6.5-6.3 8.9-1.3L40 10z'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: "80px 80px",
+          }}
+        ></div>
       </div>
 
-      {/* 🔘 Nút điều hướng */}
+      {/* Top decorative border */}
+      <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400"></div>
+
+      {/* Header */}
+      <div className="relative z-10 text-center py-12">
+        <motionDOM.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-yellow-500/20 rounded-full text-yellow-300 text-sm font-medium mb-4 border border-yellow-500/30">
+            <StarIcon className="w-4 h-4" />
+            <span>Bộ sưu tập</span>
+            <StarIcon className="w-4 h-4" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Các Loại <span className="text-yellow-400">Sổ Tay</span>
+          </h2>
+          <p className="text-yellow-100/80 max-w-2xl mx-auto">
+            Khám phá bộ sưu tập sổ tay với các chủ đề khác nhau về tư tưởng Hồ
+            Chí Minh
+          </p>
+        </motionDOM.div>
+      </div>
+
+      {/* Product info card */}
+      <motionDOM.div
+        key={index}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        className="absolute left-6 top-1/2 -translate-y-1/2 z-20 max-w-xs"
+      >
+        <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden border-2 border-yellow-400">
+          {/* Card header */}
+          <div className="bg-gradient-to-r from-red-600 to-red-700 px-5 py-3">
+            <div className="flex items-center gap-2">
+              <StarIcon className="w-5 h-5 text-yellow-400" />
+              <span className="text-yellow-300 text-sm font-medium">
+                Sản phẩm {index + 1}/{count}
+              </span>
+            </div>
+          </div>
+
+          {/* Card body */}
+          <div className="p-5">
+            <h3 className="text-xl font-bold text-gray-900 mb-2">
+              {models[index]?.name || "Sản phẩm"}
+            </h3>
+            {models[index]?.description && (
+              <p className="text-gray-600 text-sm mb-4">
+                {models[index].description}
+              </p>
+            )}
+
+            {/* Quote */}
+            <div className="bg-gradient-to-r from-amber-50 to-red-50 rounded-lg p-3 border-l-4 border-yellow-500">
+              <p className="text-gray-700 text-sm italic">
+                "{quotes[index] || quotes[0]}"
+              </p>
+              <p className="text-red-600 text-xs font-medium mt-1">
+                — Hồ Chí Minh
+              </p>
+            </div>
+          </div>
+
+          {/* Dots indicator */}
+          <div className="px-5 pb-4 flex justify-center gap-2">
+            {models.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setIndex(i)}
+                className={`h-2 rounded-full transition-all ${
+                  i === index
+                    ? "w-6 bg-red-600"
+                    : "w-2 bg-gray-300 hover:bg-red-400"
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      </motionDOM.div>
+
+      {/* Navigation buttons */}
       <ArrowButton onClick={prev} direction="left" />
       <ArrowButton onClick={next} direction="right" />
 
-      <div style={{ width: "100%", height: canvasHeight }}>
+      {/* 3D Canvas */}
+      <div style={{ width: "100%", height: canvasHeight }} className="relative">
         <Canvas shadows camera={{ position: [0, 1.5, 4.5], fov: 32 }}>
-          {/* 💡 Ánh sáng */}
-          <color attach="background" args={["#ffffff"]} />
-          <ambientLight intensity={0.5} />
+          {/* Background color - transparent to show gradient */}
+          <color attach="background" args={["transparent"]} />
+
+          {/* Lighting */}
+          <ambientLight intensity={0.6} />
           <directionalLight
-            intensity={1.2}
+            intensity={1.4}
             position={[2, 5, 5]}
             castShadow
             shadow-mapSize={[1024, 1024]}
           />
+          <spotLight
+            position={[-5, 5, 5]}
+            angle={0.3}
+            penumbra={1}
+            intensity={0.5}
+            color="#fbbf24"
+          />
 
-          {/* ☁️ Bóng đổ */}
+          {/* Shadow */}
           <ContactShadows
             position={[0, -1, 0]}
-            opacity={0.45}
+            opacity={0.35}
             scale={10}
             blur={2.5}
+            color="#7f1d1d"
           />
 
           <Environment preset="city" />
 
-          {/* 🌀 Hiệu ứng chuyển sản phẩm */}
+          {/* 3D Models carousel */}
           <Suspense fallback={null}>
             {models.map((m, i) => {
-              // Tính offset vòng tròn với tie-break theo hướng điều hướng
               const half = count / 2;
-
               let offset = i - index;
               if (offset > half) offset -= count;
               if (offset < -half) offset += count;
 
-              // FIX: với số chẵn và |offset| === half, chọn phía dựa vào hướng
               if (count % 2 === 0 && Math.abs(offset) === half) {
-                // next => đẩy item "đối diện" sang bên trái; prev => sang bên phải
                 offset = dirRef.current === 1 ? -half : half;
               }
 
@@ -181,17 +281,15 @@ const BookTypeSection = forwardRef(function BookTypeSection(
               const targetX = offset * 2.5;
               const targetZ = Math.abs(offset) * -2;
 
-              // Tính rotateY theo quy tắc cũ
               let rotateY;
               if (i === 0) {
                 rotateY = Math.PI;
               } else if (isEnteringOrLeaving) {
-                rotateY = offset * 0.4; // active ở giữa => 0, hai bên => ±0.4
+                rotateY = offset * 0.4;
               } else {
                 rotateY = lastRotateYRef.current[i];
               }
 
-              // Cập nhật bộ nhớ rotateY cho lần render sau
               lastRotateYRef.current[i] = rotateY;
 
               return (
@@ -224,10 +322,20 @@ const BookTypeSection = forwardRef(function BookTypeSection(
               );
             })}
           </Suspense>
-          {/* 👁️ Điều khiển camera */}
-          {/* <OrbitControls enableZoom={false} enablePan={false} /> */}
         </Canvas>
       </div>
+
+      {/* Bottom decorative stars */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-4 z-10">
+        <StarIcon className="w-4 h-4 text-yellow-400/40" />
+        <StarIcon className="w-6 h-6 text-yellow-400/60" />
+        <StarIcon className="w-8 h-8 text-yellow-400" />
+        <StarIcon className="w-6 h-6 text-yellow-400/60" />
+        <StarIcon className="w-4 h-4 text-yellow-400/40" />
+      </div>
+
+      {/* Bottom border */}
+      <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-400"></div>
     </section>
   );
 });

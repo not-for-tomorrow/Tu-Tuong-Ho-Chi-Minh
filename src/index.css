@@ -22,3 +22,138 @@ body {
 .outline-text {
   -webkit-text-stroke: 1px white;
 }
+/* index.css - Thêm các style mới */
+
+/* Custom scrollbar với theme đỏ-vàng */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #7f1d1d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+}
+
+/* Selection color */
+::selection {
+  background: #dc2626;
+  color: #fef3c7;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Loading animation với ngôi sao */
+@keyframes star-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+.star-pulse {
+  animation: star-pulse 2s ease-in-out infinite;
+}
+
+/* Gradient text */
+.gradient-text-hcm {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Vietnamese pattern overlay */
+.vn-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fbbf24' fill-opacity='0.1'%3E%3Cpath d='M30 5l5.09 10.26L46 16.27l-8 7.79 1.89 11.02L30 29.77l-9.89 5.31L22 24.06l-8-7.79 10.91-1.01L30 5z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Card hover effect */
+.card-hover-hcm {
+  transition: all 0.3s ease;
+}
+
+.card-hover-hcm:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(220, 38, 38, 0.25);
+}
+/* Thêm vào index.css */
+
+/* Hiệu ứng glow cho các phần tử quan trọng */
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(220, 38, 38, 0.3);
+}
+
+/* Animation cho ngôi sao */
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.9);
+  }
+}
+
+.star-twinkle {
+  animation: star-twinkle 2s ease-in-out infinite;
+}
+
+/* Gradient text */
+.text-gradient-hcm {
+  background: linear-gradient(135deg, #fbbf24 0%, #dc2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Card hover effect */
+.card-hcm:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(220, 38, 38, 0.25);
+}
+
+/* Button ripple effect */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-ripple::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 70%
+  );
+  transform: scale(0);
+  opacity: 0;
+  transition: all 0.5s;
+}
+
+.btn-ripple:active::after {
+  transform: scale(2);
+  opacity: 1;
+  transition: 0s;
+}

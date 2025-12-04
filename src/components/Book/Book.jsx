@@ -332,7 +332,7 @@ const materials = [
   });
 
   // Thicker covers
-  const coverScaleZ = isCover ? 3.0 : 1.0;
+  const coverScaleZ = isCover ? 2.9 : 1.0;
 
   // Your elastic band geometry/visibility (front/back, per cover)
   const bandX = PAGE_WIDTH * 0.85;
@@ -398,7 +398,7 @@ const materials = [
         object={manualSkinnedMesh}
         ref={skinnedMeshRef}
         position-z={-number * PAGE_DEPTH + page * PAGE_DEPTH}
-        scale={isCover ? [1.02, 1.04, coverScaleZ] : [1.0, 1.0, 1.0]}
+        scale={isCover ? [1.01, 1.04, coverScaleZ] : [1.01, 1.04, 1.0]}
       />
 
       {/* "NOTEBOOK" title on the front cover

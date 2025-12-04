@@ -41,7 +41,7 @@ export const UI = ({ showMarquee = true }) => {
   const Controls = (
     <main className="pointer-events-none select-none z-10 absolute inset-0 flex justify-between flex-col">
       <div className="pointer-events-auto mt-8 flex items-center justify-center gap-4">
-        <button
+        {/* <button
           className="px-4 py-2 rounded-full bg-white/70 text-black hover:bg-white transition"
           onClick={prevBook}
         >
@@ -53,7 +53,7 @@ export const UI = ({ showMarquee = true }) => {
           onClick={nextBook}
         >
           Next book →
-        </button>
+        </button> */}
       </div>
 
       <div className="w-full overflow-auto pointer-events-auto flex justify-center">
