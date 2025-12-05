@@ -26,9 +26,10 @@ function RotatingGLTFModel({ url, scale = 1, duration = 5000 }) {
 }
 
 const models = [
-  { url: "models/Notebook1.glb", scale: 15 },
-  { url: "models/Notebook2.glb", scale: 0.018 },
-  { url: "models/Notebook3.glb", scale: 0.016 }
+  { url: "models/Notebookhcm01.glb", scale: 15 },
+  { url: "models/Notebookhcm02.glb", scale: 0.018 },
+  { url: "models/Notebookhcm03.glb", scale: 0.016 },
+  { url: "models/Notebookhcm04.glb", scale: 24 }
 ];
 
 const applicationPoints = [

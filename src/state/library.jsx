@@ -60,7 +60,7 @@ export const BOOK_LIBRARY = [
       coverFront: "page-1-front",
       coverFrontBack: "phu-page-2", // mặt sau của bìa trước
       coverBackFront: "phu-page-3", // mặt trước của bìa sau
-      coverBack: "huy-page-1",
+      coverBack: "page-1-back",
       ruledTexture: "khang-page-1",
       images: [
         "huy-page-2", "huy-page-3",

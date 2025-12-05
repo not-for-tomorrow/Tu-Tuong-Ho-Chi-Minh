@@ -62,25 +62,25 @@ const BookTypeSection = forwardRef(function BookTypeSection(
   {
     models = [
       {
-        url: "models/Notebook1.glb",
+        url: "models/Notebookhcm01.glb",
         name: "Sổ tay Đạo đức Cách mạng",
         description: "Ghi chép về phẩm chất cần, kiệm, liêm, chính",
         scale: 5,
       },
       {
-        url: "models/Notebook2.glb",
+        url: "models/Notebookhcm02.glb",
         name: "Sổ tay Học tập",
         description: "Tổng hợp tư tưởng về giáo dục và rèn luyện",
         scale: 0.006,
       },
       {
-        url: "models/Notebook3.glb",
+        url: "models/Notebookhcm03.glb",
         name: "Sổ tay Đoàn kết",
         description: "Tinh thần đại đoàn kết dân tộc",
         scale: 0.0055,
       },
       {
-        url: "models/Notebook4.glb",
+        url: "models/Notebookhcm04.glb",
         name: "Sổ tay Di chúc",
         description: "Những lời dặn dò của Bác với thế hệ mai sau",
         scale: 8,
