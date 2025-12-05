@@ -13,6 +13,10 @@ const ThoughtPage = () => (
     <section id="context">
       <ContextSection />
     </section>
+     {/* Phần 3: Timeline dọc các mốc sự kiện */}
+    <section id="timeline">
+      <TimelineSection />
+    </section>
     <section id="return-home">
       <ReturnHomeSection />
     </section>
@@ -24,10 +28,7 @@ const ThoughtPage = () => (
       <LiberationArmySection />
     </section>
     
-    {/* Phần 3: Timeline dọc các mốc sự kiện */}
-    <section id="timeline">
-      <TimelineSection />
-    </section>
+   
     
     {/* Phần 4: Nạn đói & Cách mạng */}
     <section id="famine">
