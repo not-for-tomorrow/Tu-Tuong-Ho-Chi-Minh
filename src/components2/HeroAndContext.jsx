@@ -14,7 +14,7 @@ export const HeroSection = () => (
         playsInline
         className="absolute inset-0 w-full h-full object-cover opacity-60 sepia-[0.6] grayscale-[0.4] contrast-125 mix-blend-luminosity"
       >
-        <source src="/videos/cmt8.mp4" type="video/mp4" />
+        <source src="videos/cmt8.mp4" type="video/mp4" />
       </video>
 
       {/* Lớp phủ Overlay để tạo tông màu đỏ cũ và làm rõ chữ */}
@@ -137,7 +137,7 @@ export const ReturnHomeSection = () => (
         playsInline
         className="w-full h-full object-cover opacity-60 mix-blend-luminosity grayscale-[0.4] sepia-[0.3]"
       >
-        <source src="/videos/return.mp4" type="video/mp4" />
+        <source src="videos/return.mp4" type="video/mp4" />
       </video>
       {/* Overlay Gradient: Giữ tông đỏ đậm, tạo cảm giác cũ kỹ và giúp chữ nổi bật */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-900/95 via-red-800/90 to-red-950/95 mix-blend-multiply" />

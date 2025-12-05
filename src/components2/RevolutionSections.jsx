@@ -279,7 +279,7 @@ export const AugustRevolutionSection = () => (
         playsInline
         className="w-full h-full object-cover opacity-60 mix-blend-luminosity grayscale-[0.3] sepia-[0.2]"
       >
-        <source src="/videos/cmt8toanthang.mp4" type="video/mp4" />
+        <source src="videos/cmt8toanthang.mp4" type="video/mp4" />
       </video>
       
       {/* Các lớp phủ Overlay cũng phải để trong div fixed này để phủ lên video */}
