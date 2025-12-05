@@ -81,7 +81,7 @@ export const ContextSection = () => (
 
       <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="mb-12">
         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img src="/images/japanese-invasion.jpg" alt="Quân Nhật tiến vào Hải Phòng" className="w-full h-64 md:h-80 object-cover" />
+          <img src="images/japanese-invasion.jpg" alt="Quân Nhật tiến vào Hải Phòng" className="w-full h-64 md:h-80 object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <p className="text-white font-semibold text-lg">Quân phát xít Nhật tiến vào Hải Phòng</p>

@@ -135,7 +135,7 @@ export const FamineSection = () => (
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12">
         <div className="relative rounded-2xl overflow-hidden">
-          <img src="/images/famine-1945.jpg" alt="Nạn đói năm 1945" className="w-full h-64 md:h-80 object-cover grayscale" />
+          <img src="images/famine-1945.jpg" alt="Nạn đói năm 1945" className="w-full h-64 md:h-80 object-cover grayscale" />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <p className="text-white font-semibold text-lg">Nạn đói Ất Dậu 1945</p>
@@ -437,7 +437,7 @@ export const AugustRevolutionSection = () => (
       {/* Ảnh Tuyên ngôn */}
       <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="mb-12">
         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img src="/images/declaration.jpg" alt="Tuyên ngôn Độc lập" className="w-full h-72 md:h-96 object-cover" />
+          <img src="images/declaration.jpg" alt="Tuyên ngôn Độc lập" className="w-full h-72 md:h-96 object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
             <p className="text-yellow-400 font-bold text-xl mb-1">2 tháng 9 năm 1945</p>

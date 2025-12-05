@@ -199,7 +199,7 @@ export const LiberationArmySection = () => (
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-            <img src="/images/liberation-army.jpg" alt="34 chiến sĩ Đội VNTTGPQ" className="w-full h-80 object-cover" />
+            <img src="images/liberation-army.jpg" alt="34 chiến sĩ Đội VNTTGPQ" className="w-full h-80 object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <p className="text-yellow-400 font-bold text-xl mb-1">34 chiến sĩ đầu tiên</p>

@@ -93,7 +93,7 @@ const timelineData = [
     content: "Hồ Chí Minh ra chỉ thị thành lập Đội Việt Nam Tuyên truyền Giải phóng quân gồm 34 chiến sĩ.",
     highlight: "\"Chính trị trọng hơn quân sự.  Nó là đội tuyên truyền. \"",
     detail: "\"Cuộc kháng chiến của ta là cuộc kháng chiến của toàn dân, cần phải động viên toàn dân, vũ trang toàn dân.\"",
-    image: "/images/liberation-army.jpg",
+    image: "images/liberation-army.jpg",
     imageCaption: "34 chiến sĩ Đội Việt Nam Tuyên truyền Giải phóng quân"
   },
   {
@@ -123,7 +123,7 @@ const timelineData = [
     content: "Phát xít Nhật xâm lược Đông Dương, thiết lập chế độ cai trị hà khắc, trưng thu lương thực phục vụ chiến tranh.",
     highlight: "Đông Dương dưới ách đô hộ kép Pháp - Nhật",
     detail: "Năm 1944, Nhật buộc Pháp cung cấp hơn 900. 000 tấn gạo, cấm vận chuyển lúa từ miền Nam ra Bắc.",
-    image: "/images/japanese-invasion.jpg",
+    image: "images/japanese-invasion.jpg",
     imageCaption: "Quân phát xít Nhật tiến vào Hải Phòng"
   },
   {
@@ -135,7 +135,7 @@ const timelineData = [
     content: "Nạn đói cực kỳ nghiêm trọng do chính sách trưng thu gạo của Nhật-Pháp, thiên tai, chiến tranh.  Giá gạo chợ đen từ 57đ (1943) tăng vọt lên 700-800đ (1945).",
     highlight: "Hơn 2 triệu người chết đói",
     detail: "Việt Minh tích cực cứu trợ: phát động chiếm kho thóc cứu đói, xây dựng hình ảnh 'người của dân, vì dân', biến từ lực lượng bí mật thành phong trào quần chúng rộng lớn.",
-    image: "/images/famine-1945.jpg",
+    image: "images/famine-1945.jpg",
     imageCaption: "Nạn đói Ất Dậu 1945 - Hơn 2 triệu đồng bào thiệt mạng"
   },
   {
@@ -252,7 +252,7 @@ const timelineData = [
     content: "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập, trịnh trọng tuyên bố quyền độc lập, tự do, bình đẳng của dân tộc Việt Nam trước thế giới.",
     highlight: "Khai sinh nước Việt Nam Dân chủ Cộng hòa",
     detail: "\"Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do, độc lập.  Toàn thể dân tộc Việt Nam, quyết đem tất cả tinh thần và lực lượng, tính mạng và của cải để giữ vững quyền tự do, độc lập ấy.\"",
-    image: "/images/declaration.jpg",
+    image: "images/declaration.jpg",
     imageCaption: "Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình"
   }
 ];
