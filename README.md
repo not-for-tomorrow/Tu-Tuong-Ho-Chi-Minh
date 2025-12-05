@@ -200,6 +200,23 @@ Tu-Tuong-Ho-Chi-Minh/
 </div>
 
 Mọi ý kiến đóng góp, báo lỗi, thêm nội dung...  xin vui lòng:
+<p>
+  <a href="mailto:nhathuyn1369@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-huy-83a0ab29a/">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://twitter.com/nnh49946258">
+    <img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" />
+  </a>
+  <a href="https://discord.gg/RAJArs7U">
+    <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" />
+  </a>
+  <a href="https://www.instagram.com/nhathuyn276/">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>
+</p>
 
 1. 🍴 Fork repository
 2. 🔧 Tạo branch mới (`git checkout -b feature/TinhNangMoi`)
