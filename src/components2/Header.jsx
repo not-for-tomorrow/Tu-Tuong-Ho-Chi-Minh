@@ -2,52 +2,50 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, BookOpen, Sparkles } from "lucide-react";
 
-export const Header = ({ onTogglePage, currentPage }) => {
+export const Header = ({ onTogglePage }) => {
   const [open, setOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("#banner");
+  const [activeSection, setActiveSection] = useState("#overview"); // Mặc định section đầu tiên
   const [scrolled, setScrolled] = useState(false);
 
-  const toggleButtonLabel = currentPage === 'notebook' ? "Khám phá Tư Tưởng" : "Về Sổ Tay";
-  const ToggleIcon = currentPage === 'notebook' ? Sparkles : BookOpen;
-
+  // 🟢 DANH SÁCH MENU CHO TRANG TƯ TƯỞNG (Bạn chỉnh sửa ở đây)
   const navLinks = [
-    { href: "#banner", label: "Trang chủ" },
-    { href: "#introduction", label: "Giới thiệu" },
-    { href: "#book-section", label: "Sổ tay 3D" },
-    { href: "#description", label: "Mô tả sản phẩm" },
-    { href: "#applicability", label: "Ứng dụng" },
-    { href: "#technology-banner", label: "Công nghệ" },
-    { href: "#contact", label: "Liên hệ" },
+    { href: "#overview", label: "Tổng quan" },
+    { href: "#core-values", label: "Giá trị cốt lõi" },
+    { href: "#timeline", label: "Tiểu sử" },
+    { href: "#documents", label: "Tài liệu" },
+    { href: "#stories", label: "Câu chuyện" },
+    { href: "#gallery", label: "Thư viện ảnh" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
       
-      if (currentPage === 'notebook') {
-        const scrollY = window.scrollY;
-        let current = "#banner";
-        navLinks.forEach(({ href }) => {
-          const section = document.querySelector(href);
-          if (section) {
-            const sectionTop = section.offsetTop - 120;
-            if (scrollY >= sectionTop) current = href;
-          }
-        });
-        setActiveSection(current);
-      }
+      const scrollY = window.scrollY;
+      let current = "#overview";
+      navLinks.forEach(({ href }) => {
+        const section = document.querySelector(href);
+        if (section) {
+          const sectionTop = section.offsetTop - 120;
+          if (scrollY >= sectionTop) current = href;
+        }
+      });
+      setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [currentPage]);
+  }, []);
+
+  // Nút này đang ở trang Tư Tưởng, nên click sẽ về Sổ Tay
+  const toggleButtonLabel = "Về Sổ Tay";
+  const ToggleIcon = BookOpen;
 
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          // Xóa shadow-xl, chỉ giữ background và border
-          ? "bg-red-900/95 backdrop-blur-md" 
+          ? "bg-red-900/95 backdrop-blur-lg shadow-xl" 
           : "bg-gradient-to-r from-red-800 via-red-700 to-red-800"
       } border-b-2 border-yellow-500`}
     >
@@ -55,10 +53,7 @@ export const Header = ({ onTogglePage, currentPage }) => {
         {/* Logo */}
         <motion.div
           className="flex items-center gap-3 cursor-pointer select-none"
-          onClick={() => {
-            if(currentPage !== 'notebook') onTogglePage();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-          }}
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
         >
@@ -72,7 +67,7 @@ export const Header = ({ onTogglePage, currentPage }) => {
               />
             </svg>
           </div>
-          <div className="flex flex-col leading-tight">
+           <div className="flex flex-col leading-tight">
             <h1 className="text-[18px] md:text-[20px] font-bold text-yellow-400 tracking-wide font-serif">
               Tư Tưởng Hồ Chí Minh
             </h1>
@@ -84,30 +79,28 @@ export const Header = ({ onTogglePage, currentPage }) => {
 
         {/* Menu desktop */}
         <nav className="hidden lg:flex items-center">
-          {currentPage === 'notebook' && (
-            <ul className="flex items-center gap-6 xl:gap-8 2xl:gap-10">
-              {navLinks.map(({ href, label }) => (
-                <li key={href} className="list-none">
-                  <motion.a
-                    href={href}
-                    className={`relative group transition-colors duration-200 py-2 px-0 whitespace-nowrap ${
-                      activeSection === href 
-                        ? "text-yellow-400" 
-                        : "text-white hover:text-yellow-300"
+          <ul className="flex items-center gap-6 xl:gap-8 2xl:gap-10">
+            {navLinks.map(({ href, label }) => (
+              <li key={href} className="list-none">
+                <motion.a
+                  href={href}
+                  className={`relative group transition-colors duration-200 py-2 px-0 whitespace-nowrap ${
+                    activeSection === href 
+                      ? "text-yellow-400" 
+                      : "text-white hover:text-yellow-300"
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                >
+                  <span className="tracking-normal">{label}</span>
+                  <span
+                    className={`absolute left-0 -bottom-[6px] h-[2px] bg-yellow-400 transition-all duration-300 ${
+                      activeSection === href ? "w-14" : "w-0 group-hover:w-14"
                     }`}
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <span className="tracking-normal">{label}</span>
-                    <span
-                      className={`absolute left-0 -bottom-[6px] h-[2px] bg-yellow-400 transition-all duration-300 ${
-                        activeSection === href ? "w-14" : "w-0 group-hover:w-14"
-                      }`}
-                    />
-                  </motion.a>
-                </li>
-              ))}
-            </ul>
-          )}
+                  />
+                </motion.a>
+              </li>
+            ))}
+          </ul>
         </nav>
 
         {/* CTA Button */}
@@ -140,7 +133,7 @@ export const Header = ({ onTogglePage, currentPage }) => {
             exit={{ height: 0, opacity: 0 }}
           >
             <ul className="flex flex-col items-stretch px-6 py-6 space-y-2">
-              {currentPage === 'notebook' && navLinks.map(({ href, label }) => (
+              {navLinks.map(({ href, label }) => (
                 <li key={href} className="list-none">
                   <a
                     href={href}

@@ -1,55 +1,58 @@
-// App.jsx
-import { useRef } from "react";
-import { Header } from "./components/Header";
-import { Banner } from "./components/Banner";
-import BookSection from "./components/Book/BookSection";
-import BookmarkSection from "./components/Bookmark/BookmarkSection";
-import { DescriptionSection } from "./components/Description/DescriptionSection";
-import BookTypeSection from "./components/Booktype/BookTypeSection";
-import { Footer } from "./components/Footer";
-import Introduction from "./components/Introduction";
-import Applicability from "./components/Applicability";
-import ShowTechnology from "./components/Showtechnology/Showtechnology";
-import ShowBannerTechnology from "./components/Showtechnology/Showbannertechnology";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Header as NotebookHeader } from "./components/Header";
+import { Header as ThoughtHeader } from "./components2/Header";
+
+import NotebookPage from "./pages/NotebookPage";
+import ThoughtPage from "./pages/ThoughtPage";
 import "./index.css";
 
 function App() {
-  const bookRef = useRef();
+  const [pageState, setPageState] = useState("notebook");
+
+  const togglePage = () => {
+    setPageState(prev => prev === "notebook" ? "thought" : "notebook");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
-      <Header />
+    // Wrapper ngoài cùng có thể để màu đỏ để an toàn tuyệt đối
+    <div className="min-h-screen bg-red-800 relative">
       
-      <main className="scroll-smooth">
-        <Banner />
-        
-        <Introduction />
-        
-        {/* Book & Bookmark Section */}
-        <section className="w-full bg-gradient-to-b from-red-50 to-white">
-          <div className="max-w-[1800px] mx-auto px-4 py-8">
-            <div className="grid grid-cols-1 lg:grid-cols-3 w-full h-[950px] gap-4">
-              <div className="lg:col-span-2 h-full rounded-2xl overflow-hidden shadow-2xl">
-                <BookSection ref={bookRef} />
-              </div>
-              <aside className="lg:col-span-1 h-full rounded-2xl overflow-hidden shadow-2xl">
-                <BookmarkSection />
-              </aside>
-            </div>
-          </div>
-        </section>
-
-        <DescriptionSection />
-
-        <BookTypeSection canvasHeight="800px" />
-
-        <Applicability />
-        
-        <ShowBannerTechnology />
-        <ShowTechnology />
-      </main>
-
-      <Footer bookRef={bookRef} />
+      {pageState === "notebook" ? (
+        <NotebookHeader onTogglePage={togglePage} currentPage="notebook" />
+      ) : (
+        <ThoughtHeader onTogglePage={togglePage} />
+      )}
+      
+      <AnimatePresence mode="wait">
+        {pageState === "notebook" ? (
+          <motion.div
+            key="notebook"
+            // ĐÃ XÓA "bg-white" ở đây. 
+            // Để w-full và relative để nội dung hiển thị đúng.
+            className="w-full relative z-0"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <NotebookPage />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="thought"
+            // Trang Thought vẫn cần nền trắng/xám
+            className="w-full bg-slate-50"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <ThoughtPage />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
