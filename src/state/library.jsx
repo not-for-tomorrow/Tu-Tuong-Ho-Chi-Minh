@@ -57,10 +57,10 @@ export const BOOK_LIBRARY = [
  {
     title: "Notebook linh hoạt",
     pages: buildNotebookPagesFlexible({
-      coverFront: "page-1-front",
+      coverFront: "page-01-front",
       coverFrontBack: "phu-page-2", // mặt sau của bìa trước
       coverBackFront: "phu-page-3", // mặt trước của bìa sau
-      coverBack: "page-1-back",
+      coverBack: "page-01-back",
       ruledTexture: "khang-page-1",
       images: [
         "huy-page-2", "huy-page-3",
