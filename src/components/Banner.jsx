@@ -15,15 +15,25 @@ const HO_CHI_MINH_QUOTES = [
   {
     quote: "Một năm khởi đầu từ mùa xuân. Một đời khởi đầu từ tuổi trẻ. Tuổi trẻ là mùa xuân của xã hội.",
     source: "Hồ Chí Minh"
-  }
+  },
+  {
+  quote: "[translate:Tự lực, tự cường, từng bước vượt khó khăn.]",
+  source: "Hồ Chí Minh"
+},
+{
+  quote: "[translate:Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công.]",
+  source: "Hồ Chí Minh"
+}
 ];
 
 export const Banner = () => {
   const SLIDES = useMemo(
     () => [
-      "textures/banner-1.jpg",
-      "textures/bannertest1.jpg",
-      "textures/bannertest2.jpg",
+      "textures/banner01.jpg",
+      "textures/banner02.jpg",
+      "textures/banner03.jpg",
+      "textures/banner04.jpg",
+      "textures/banner05.jpg",
     ],
     []
   );
