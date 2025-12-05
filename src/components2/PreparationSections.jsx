@@ -185,9 +185,9 @@ export const TrainingSection = () => (
 
 // ==================== LIBERATION ARMY SECTION ====================
 export const LiberationArmySection = () => (
-  <section className="relative min-h-screen bg-red-900 text-white" style={{ clipPath: "inset(0)" }}>
+  <section className="relative py-20 overflow-hidden text-white" style={{ clipPath: "inset(0)" }}>
     {/* Sticky Video Background */}
-    <div className="fixed top-0 left-0 w-full h-full z-0">
+    <div className="absolute top-0 left-0 w-full h-full z-0">
       <video
         autoPlay
         loop
