@@ -3,30 +3,45 @@ import { Calendar, MapPin, Flag, AlertTriangle, Users, Flame, Sword, Star, Targe
 
 // ==================== HERO SECTION ====================
 export const HeroSection = () => (
-  <section id="overview" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
-    <div className="absolute inset-0 bg-gradient-to-br from-red-900 via-red-800 to-red-900">
-      <div className="absolute top-20 left-10 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl" />
+  <section id="overview" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-red-900">
+    {/* VIDEO BACKGROUND LAYER */}
+    <div className="absolute inset-0 z-0">
+      {/* Video gốc với bộ lọc tạo màu cũ */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-60 sepia-[0.6] grayscale-[0.4] contrast-125 mix-blend-luminosity"
+      >
+        <source src="/videos/cmt8.mp4" type="video/mp4" />
+      </video>
+
+      {/* Lớp phủ Overlay để tạo tông màu đỏ cũ và làm rõ chữ */}
+      <div className="absolute inset-0 bg-gradient-to-b from-red-950/90 via-red-900/80 to-red-950/90 mix-blend-multiply" />
+      
+      {/* Hiệu ứng noise (hạt nhiễu) giả lập phim nhựa cũ - Optional */}
+      <div className="absolute inset-0 opacity-[0.15] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-overlay pointer-events-none"></div>
     </div>
 
     <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
       <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <div className="inline-flex items-center gap-2 bg-yellow-500/20 border border-yellow-400/50 rounded-full px-4 py-2 mb-6">
+        <div className="inline-flex items-center gap-2 bg-yellow-500/20 border border-yellow-400/50 rounded-full px-4 py-2 mb-6 backdrop-blur-md shadow-lg">
           <Calendar className="w-4 h-4 text-yellow-400" />
           <span className="text-yellow-300 text-sm font-medium">1941 – 1945</span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight drop-shadow-2xl">
           Hành Trình Trở Về
-          <span className="block text-yellow-400 mt-2">Lãnh Đạo Cách Mạng</span>
+          <span className="block text-yellow-400 mt-2 drop-shadow-md">Lãnh Đạo Cách Mạng</span>
         </h1>
 
-        <p className="text-xl md:text-2xl text-yellow-100/90 max-w-4xl mx-auto mb-6 leading-relaxed">
+        <p className="text-xl md:text-2xl text-yellow-100/90 max-w-4xl mx-auto mb-6 leading-relaxed drop-shadow-lg font-medium">
           Từ Pác Bó đến Quảng trường Ba Đình — Kết thúc 30 năm bôn ba nước ngoài, 
           trực tiếp lãnh đạo cách mạng, đưa dân tộc tới kỷ nguyên độc lập tự do
         </p>
 
-        <p className="text-lg text-yellow-200/70 max-w-3xl mx-auto mb-10">
+        <p className="text-lg text-yellow-200/80 max-w-3xl mx-auto mb-10 drop-shadow-md">
           Đỉnh cao là thành công của Cách mạng Tháng Tám năm 1945, khai sinh ra nước Việt Nam Dân chủ Cộng hòa
         </p>
 
@@ -42,11 +57,11 @@ export const HeroSection = () => (
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 + i * 0.1 }}
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-5 py-4 min-w-[160px]"
+              className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl px-5 py-4 min-w-[160px] hover:bg-black/50 transition-colors"
             >
-              <item.icon className="w-6 h-6 text-yellow-400 mx-auto mb-2" />
-              <div className="text-white font-semibold text-sm">{item.label}</div>
-              <div className="text-yellow-200/70 text-xs">{item.sub}</div>
+              <item.icon className="w-6 h-6 text-yellow-400 mx-auto mb-2 drop-shadow-lg" />
+              <div className="text-white font-semibold text-sm tracking-wide">{item.label}</div>
+              <div className="text-yellow-200/80 text-xs">{item.sub}</div>
             </motion.div>
           ))}
         </div>
@@ -64,7 +79,7 @@ export const ContextSection = () => (
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif mb-4">Tại sao 1941–1945 là bước ngoặt? </h2>
       </motion.div>
 
-      <motion. div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
+      <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
         className="bg-white rounded-3xl shadow-xl p-8 mb-12 border border-gray-100">
         <p className="text-lg text-gray-700 leading-relaxed mb-6">
           Đầu thập niên 1940, <strong className="text-red-700">Đông Dương trong trạng thái biến động</strong>: 
@@ -77,11 +92,11 @@ export const ContextSection = () => (
             có đường lối rõ ràng và có mạng lưới quần chúng cơ sở tung ra phong trào giành chính quyền. 
           </p>
         </div>
-      </motion. div>
+      </motion.div>
 
       <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="mb-12">
         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img src="images/japanese-invasion.jpg" alt="Quân Nhật tiến vào Hải Phòng" className="w-full h-64 md:h-80 object-cover" />
+          <img src="images/japanese-invasion.jpg" alt="Quân Nhật tiến vào Hải Phòng" className="w-full h-64 md:h-[500px] object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <p className="text-white font-semibold text-lg">Quân phát xít Nhật tiến vào Hải Phòng</p>
@@ -112,20 +127,38 @@ export const ContextSection = () => (
 
 // ==================== RETURN HOME SECTION ====================
 export const ReturnHomeSection = () => (
-  <section className="py-20 bg-gradient-to-br from-red-800 via-red-700 to-red-900 text-white">
-    <div className="max-w-6xl mx-auto px-6">
+  <section className="relative py-20 overflow-hidden text-white">
+    {/* Video Background Layer */}
+    <div className="absolute inset-0 z-0">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover opacity-60 mix-blend-luminosity grayscale-[0.4] sepia-[0.3]"
+      >
+        <source src="/videos/return.mp4" type="video/mp4" />
+      </video>
+      {/* Overlay Gradient: Giữ tông đỏ đậm, tạo cảm giác cũ kỹ và giúp chữ nổi bật */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-900/95 via-red-800/90 to-red-950/95 mix-blend-multiply" />
+      {/* Noise texture (optional) - giả lập nhiễu hạt film cFũ */}
+      <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
+    </div>
+
+    {/* Content Container - Thêm relative và z-10 để nằm trên video */}
+    <div className="relative z-10 max-w-6xl mx-auto px-6">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 bg-yellow-500 text-red-900 px-4 py-2 rounded-full font-bold mb-6">
+        <div className="inline-flex items-center gap-2 bg-yellow-500 text-red-900 px-4 py-2 rounded-full font-bold mb-6 shadow-lg shadow-red-900/50">
           <MapPin className="w-5 h-5" />
           NGÀY 28/01/1941
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4">Trở Về Tổ Quốc</h2>
-        <p className="text-xl text-yellow-200">Kết thúc 30 năm bôn ba nước ngoài</p>
+        <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4 text-shadow-sm">Trở Về Tổ Quốc</h2>
+        <p className="text-xl text-yellow-200 font-medium text-shadow-sm">Kết thúc 30 năm bôn ba nước ngoài</p>
       </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
+          <div className="bg-black/20 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-2xl">
             <p className="text-lg text-white/90 leading-relaxed mb-6">
               Trong quá trình hoạt động ở nước ngoài, <strong className="text-yellow-400">Nguyễn Ái Quốc</strong> luôn theo dõi sát sao 
               tình hình trong nước để tìm thời điểm thích hợp trở về Tổ quốc trực tiếp lãnh đạo cách mạng.
@@ -134,7 +167,7 @@ export const ReturnHomeSection = () => (
               <strong className="text-yellow-400">Cao Bằng</strong>, mảnh đất "phên dậu" phía Đông Bắc của Tổ quốc, chính là sự lựa chọn của Người. 
             </p>
             
-            <div className="bg-yellow-500/20 border border-yellow-400/50 rounded-2xl p-6 mb-6">
+            <div className="bg-yellow-500/10 border border-yellow-400/30 rounded-2xl p-6 mb-6">
               <p className="text-yellow-100 font-medium">
                 📍 <strong>Ngày 28/01/1941</strong> (mùng hai Tết Tân Tỵ), Lãnh tụ Nguyễn Ái Quốc 
                 qua <strong>mốc 108</strong> (nay là cột mốc 675) biên giới Việt Nam - Trung Quốc 
@@ -156,13 +189,13 @@ export const ReturnHomeSection = () => (
               { icon: MapPin, title: "Địa điểm chiến lược", desc: "Cao Bằng - vùng núi hiểm trở, sát biên giới, thuận lợi cho việc xây dựng căn cứ địa" },
               { icon: Star, title: "Đỉnh cao thắng lợi", desc: "Từng bước đưa cách mạng cả nước tới thành công của Cách mạng Tháng Tám 1945" },
             ].map((item, i) => (
-              <div key={i} className="bg-white/10 border border-white/20 rounded-2xl p-5 flex items-start gap-4">
-                <div className="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center shrink-0">
-                  <item. icon className="w-6 h-6 text-red-900" />
+              <div key={i} className="bg-black/30 border border-white/10 rounded-2xl p-5 flex items-start gap-4 hover:bg-black/40 transition-colors">
+                <div className="w-12 h-12 bg-yellow-600/80 rounded-xl flex items-center justify-center shrink-0 ring-1 ring-yellow-500/50">
+                  <item.icon className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-yellow-400 mb-1">{item.title}</h4>
-                  <p className="text-white/80 text-sm">{item. desc}</p>
+                  <p className="text-white/80 text-sm">{item.desc}</p>
                 </div>
               </div>
             ))}

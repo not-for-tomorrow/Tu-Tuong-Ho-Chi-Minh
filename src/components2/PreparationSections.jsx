@@ -185,59 +185,81 @@ export const TrainingSection = () => (
 
 // ==================== LIBERATION ARMY SECTION ====================
 export const LiberationArmySection = () => (
-  <section className="py-20 bg-gradient-to-br from-red-900 via-red-800 to-red-900 text-white">
-    <div className="max-w-6xl mx-auto px-6">
+  <section className="relative py-20 overflow-hidden text-white">
+    {/* Video Background Layer */}
+    <div className="absolute inset-0 z-0">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover opacity-50 mix-blend-luminosity grayscale-[0.5] sepia-[0.4] contrast-125"
+      >
+        <source src="/videos/liberation.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Overlay Gradient: Tông đỏ đậm, tạo không khí nghiêm trang, hào hùng */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-900/95 via-red-800/90 to-red-950/95 mix-blend-multiply" />
+      
+      {/* Noise texture - giả lập nhiễu hạt film cũ */}
+      <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
+    </div>
+
+    <div className="relative z-10 max-w-6xl mx-auto px-6">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 bg-yellow-500 text-red-900 px-4 py-2 rounded-full font-bold mb-6">
+        <div className="inline-flex items-center gap-2 bg-yellow-500 text-red-900 px-4 py-2 rounded-full font-bold mb-6 shadow-lg shadow-red-900/50">
           <Sword className="w-5 h-5" />
           THÁNG 12/1944
         </div>
-        <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4">Đội Việt Nam Tuyên truyền Giải phóng quân</h2>
-        <p className="text-xl text-yellow-200">Tiền thân của Quân đội Nhân dân Việt Nam</p>
+        <h2 className="text-3xl md:text-5xl font-bold font-serif mb-4 text-shadow-sm">Đội Việt Nam Tuyên truyền Giải phóng quân</h2>
+        <p className="text-xl text-yellow-200 font-medium text-shadow-sm">Tiền thân của Quân đội Nhân dân Việt Nam</p>
       </motion.div>
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-            <img src="images/liberation-army.jpg" alt="34 chiến sĩ Đội VNTTGPQ" className="w-full h-80 object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 via-transparent to-transparent" />
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500/20">
+            <img src="images/liberation-army.jpg" alt="34 chiến sĩ Đội VNTTGPQ" className="w-full h-80 object-cover sepia-[0.2]" />
+            <div className="absolute inset-0 bg-gradient-to-t from-red-900/90 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
-              <p className="text-yellow-400 font-bold text-xl mb-1">34 chiến sĩ đầu tiên</p>
-              <p className="text-white">Đội Việt Nam Tuyên truyền Giải phóng quân — 22/12/1944</p>
+              <p className="text-yellow-400 font-bold text-xl mb-1 drop-shadow-md">34 chiến sĩ đầu tiên</p>
+              <p className="text-white font-medium">Đội Việt Nam Tuyên truyền Giải phóng quân — 22/12/1944</p>
             </div>
           </div>
         </motion.div>
 
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
           <div className="space-y-6">
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-              <h3 className="font-bold text-yellow-400 mb-3">Nguyên tắc hoạt động</h3>
-              <blockquote className="text-white/90 italic border-l-4 border-yellow-400 pl-4">
-                "Chính trị trọng hơn quân sự.  Nó là đội tuyên truyền."
+            <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-black/40 transition-colors">
+              <h3 className="font-bold text-yellow-400 mb-3 uppercase tracking-wide text-sm">Nguyên tắc hoạt động</h3>
+              <blockquote className="text-white/90 italic border-l-4 border-yellow-500 pl-4 py-1">
+                "Chính trị trọng hơn quân sự. Nó là đội tuyên truyền."
               </blockquote>
             </div>
 
-            <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6">
-              <h3 className="font-bold text-yellow-400 mb-3">Đường lối kháng chiến</h3>
+            <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-black/40 transition-colors">
+              <h3 className="font-bold text-yellow-400 mb-3 uppercase tracking-wide text-sm">Đường lối kháng chiến</h3>
               <p className="text-white/90 text-sm leading-relaxed">
-                "Cuộc kháng chiến của ta là cuộc kháng chiến của toàn dân, cần phải <strong>động viên toàn dân, vũ trang toàn dân</strong>.  
+                "Cuộc kháng chiến của ta là cuộc kháng chiến của toàn dân, cần phải <strong className="text-yellow-300">động viên toàn dân, vũ trang toàn dân</strong>.  
                 Trong khi tập trung lực lượng để lập một đội quân đầu tiên, cần phải duy trì lực lượng vũ trang trong các địa phương."
               </p>
             </div>
 
-            <div className="bg-yellow-500 text-red-900 rounded-2xl p-6">
-              <h3 className="font-bold mb-3">🎖️ Chiến thắng đầu tiên</h3>
+            <div className="bg-yellow-500 text-red-900 rounded-2xl p-6 shadow-lg shadow-yellow-500/20 transform hover:scale-[1.02] transition-transform">
+              <h3 className="font-bold mb-3 flex items-center gap-2">
+                <Star className="w-5 h-5 fill-red-900" />
+                Chiến thắng đầu tiên
+              </h3>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/30 rounded-xl p-4 text-center">
+                <div className="bg-red-900/10 border border-red-900/20 rounded-xl p-4 text-center">
                   <p className="font-bold text-lg">Phai Khắt</p>
-                  <p className="text-sm">25/12/1944</p>
+                  <p className="text-sm opacity-80">25/12/1944</p>
                 </div>
-                <div className="bg-white/30 rounded-xl p-4 text-center">
+                <div className="bg-red-900/10 border border-red-900/20 rounded-xl p-4 text-center">
                   <p className="font-bold text-lg">Nà Ngần</p>
-                  <p className="text-sm">26/12/1944</p>
+                  <p className="text-sm opacity-80">26/12/1944</p>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-center font-medium">
+              <p className="mt-4 text-sm text-center font-medium opacity-90">
                 Chiến công tiêu biểu cho sức mạnh mưu trí và tinh thần quả cảm
               </p>
             </div>

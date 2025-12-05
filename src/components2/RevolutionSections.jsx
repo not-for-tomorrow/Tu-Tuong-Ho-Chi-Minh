@@ -135,7 +135,7 @@ export const FamineSection = () => (
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12">
         <div className="relative rounded-2xl overflow-hidden">
-          <img src="images/famine-1945.jpg" alt="Nạn đói năm 1945" className="w-full h-64 md:h-80 object-cover grayscale" />
+          <img src="images/famine-1945.jpg" alt="Nạn đói năm 1945" className="w-full h-64 md:h-[500px] object-cover grayscale" />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6">
             <p className="text-white font-semibold text-lg">Nạn đói Ất Dậu 1945</p>
@@ -263,23 +263,47 @@ export const FamineSection = () => (
 
 // ==================== AUGUST REVOLUTION SECTION ====================
 export const AugustRevolutionSection = () => (
-  <section className="py-20 bg-gradient-to-br from-red-800 via-red-700 to-red-900 text-white">
-    <div className="max-w-6xl mx-auto px-6">
+  // Kỹ thuật quan trọng: style={{ clipPath: "inset(0)" }}
+  // Nó tạo ra một khung nhìn giới hạn, giúp video "fixed" chỉ hiển thị khi scroll qua section này
+  <section 
+    className="relative w-full min-h-screen py-20 text-white bg-red-900" // Thêm bg-red-900 để dự phòng khi video chưa load
+    style={{ clipPath: "inset(0)" }} 
+  >
+    {/* Video Background Layer */}
+    {/* position: fixed để video luôn đứng yên đầy màn hình */}
+    <div className="fixed top-0 left-0 w-full h-full z-0">
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="w-full h-full object-cover opacity-60 mix-blend-luminosity grayscale-[0.3] sepia-[0.2]"
+      >
+        <source src="/videos/cmt8toanthang.mp4" type="video/mp4" />
+      </video>
+      
+      {/* Các lớp phủ Overlay cũng phải để trong div fixed này để phủ lên video */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-900/95 via-red-800/90 to-red-950/95 mix-blend-multiply" />
+      <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
+    </div>
+
+    {/* Content Container - Vẫn giữ relative để trôi lên trên lớp fixed video */}
+    <div className="relative z-10 max-w-6xl mx-auto px-6">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 bg-yellow-500 text-red-900 px-4 py-2 rounded-full font-bold mb-6">
+        <div className="inline-flex items-center gap-2 bg-yellow-500 text-red-900 px-4 py-2 rounded-full font-bold mb-6 shadow-lg shadow-red-900/50">
           <Flag className="w-5 h-5" />
           THÁNG 8/1945
         </div>
-        <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4">Cách Mạng Tháng Tám</h2>
-        <p className="text-xl text-yellow-200">"Thời cơ ngàn năm có một" — 15 ngày làm nên lịch sử</p>
+        <h2 className="text-4xl md:text-5xl font-bold font-serif mb-4 text-shadow-sm">Cách Mạng Tháng Tám</h2>
+        <p className="text-xl text-yellow-200 font-medium text-shadow-sm">"Thời cơ ngàn năm có một" — 15 ngày làm nên lịch sử</p>
       </motion.div>
 
       {/* Bối cảnh thế giới */}
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12">
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
+        <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-xl">
           <h3 className="text-xl font-bold text-yellow-400 mb-4">🌍 Bối cảnh thế giới cuối 1944 - đầu 1945</h3>
           <p className="text-white/90 leading-relaxed">
-            Cục diện thế giới thay đổi nhanh chóng.  Sau loạt thất bại của phe trục ở Thái Bình Dương và châu Âu, 
+            Cục diện thế giới thay đổi nhanh chóng. Sau loạt thất bại của phe trục ở Thái Bình Dương và châu Âu, 
             cùng với việc phát xít Nhật sắp thua tại Đông Dương, <strong className="text-yellow-400">quyền lực thực dân & chính quyền bù nhìn suy yếu rõ rệt</strong>.
             Trung ương Đảng nhận định: <strong className="text-yellow-400">Đây là thời cơ "ngàn năm có một"</strong> để nhân dân ta vùng lên giành lại độc lập.
           </p>
@@ -288,7 +312,7 @@ export const AugustRevolutionSection = () => (
 
       {/* Chuẩn bị khởi nghĩa */}
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12">
-        <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-3xl p-8">
+        <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-3xl p-8 shadow-xl">
           <h3 className="text-2xl font-bold text-yellow-400 mb-6">Chuẩn bị Tổng khởi nghĩa</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
@@ -297,7 +321,7 @@ export const AugustRevolutionSection = () => (
               { date: "4/6/1945", event: "Khu Giải phóng Việt Bắc chính thức thành lập" },
               { date: "13/8/1945", event: "Ủy ban Khởi nghĩa toàn quốc thành lập, ra Quân lệnh số 1 phát động tổng khởi nghĩa" },
             ].map((item, i) => (
-              <div key={i} className="bg-white/10 rounded-xl p-4">
+              <div key={i} className="bg-white/5 rounded-xl p-4 border border-white/5 hover:bg-white/10 transition-colors">
                 <p className="text-yellow-400 font-bold text-sm mb-2">{item.date}</p>
                 <p className="text-white/90 text-sm">{item.event}</p>
               </div>
@@ -308,9 +332,9 @@ export const AugustRevolutionSection = () => (
 
       {/* Quốc dân đại hội Tân Trào */}
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12">
-        <div className="bg-yellow-500/20 border border-yellow-400/50 rounded-3xl p-8">
+        <div className="bg-gradient-to-br from-yellow-500/20 to-yellow-600/10 border border-yellow-400/30 rounded-3xl p-8 backdrop-blur-md">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center">
+            <div className="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center shadow-lg shadow-yellow-500/20">
               <Star className="w-8 h-8 text-red-900" />
             </div>
             <div>
@@ -327,7 +351,7 @@ export const AugustRevolutionSection = () => (
               "Cử Ủy ban Giải phóng dân tộc Việt Nam (Chính phủ Lâm thời) do Chủ tịch Hồ Chí Minh đứng đầu"
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-2">
-                <CheckCircle className="w-5 h-5 text-green-400 mt-0. 5 shrink-0" />
+                <CheckCircle className="w-5 h-5 text-green-400 mt-0.5 shrink-0" />
                 <span>{item}</span>
               </li>
             ))}
@@ -337,16 +361,16 @@ export const AugustRevolutionSection = () => (
 
       {/* Chi tiết 3 thành phố */}
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12">
-        <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center">Diễn biến tại 3 đô thị lớn</h3>
+        <h3 className="text-2xl font-bold text-yellow-400 mb-6 text-center text-shadow-sm">Diễn biến tại 3 đô thị lớn</h3>
         <div className="grid lg:grid-cols-3 gap-6">
           {/* Hà Nội */}
-          <div className="bg-white/10 border border-white/20 rounded-2xl overflow-hidden">
-            <div className="bg-red-600 p-4">
+          <div className="bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-red-500/50 transition-colors">
+            <div className="bg-gradient-to-r from-red-700 to-red-600 p-4">
               <div className="flex items-center gap-3">
                 <Building className="w-6 h-6" />
                 <div>
                   <h4 className="text-xl font-bold">Hà Nội</h4>
-                  <p className="text-white/80 text-sm">17-19/8/1945</p>
+                  <p className="text-white/90 text-sm">17-19/8/1945</p>
                 </div>
               </div>
             </div>
@@ -361,19 +385,19 @@ export const AugustRevolutionSection = () => (
               </div>
               <div className="flex gap-3">
                 <span className="text-yellow-400 font-bold shrink-0">19/8:</span>
-                <span className="text-white/80">Tổng khởi nghĩa với khí thế áp đảo.  Chiếm Phủ Khâm sai Bắc Bộ, Sở Cảnh sát, Sở Bưu điện, Trại Bảo an binh.  <strong className="text-green-400">Đêm 19/8 hoàn toàn làm chủ Thủ đô. </strong></span>
+                <span className="text-white/80">Tổng khởi nghĩa với khí thế áp đảo. Chiếm Phủ Khâm sai Bắc Bộ, Sở Cảnh sát. <strong className="text-green-400">Đêm 19/8 hoàn toàn làm chủ Thủ đô.</strong></span>
               </div>
             </div>
           </div>
 
           {/* Huế */}
-          <div className="bg-white/10 border border-white/20 rounded-2xl overflow-hidden">
-            <div className="bg-purple-600 p-4">
+          <div className="bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-purple-500/50 transition-colors">
+            <div className="bg-gradient-to-r from-purple-700 to-purple-600 p-4">
               <div className="flex items-center gap-3">
                 <Crown className="w-6 h-6" />
                 <div>
                   <h4 className="text-xl font-bold">Huế</h4>
-                  <p className="text-white/80 text-sm">20-23/8/1945</p>
+                  <p className="text-white/90 text-sm">20-23/8/1945</p>
                 </div>
               </div>
             </div>
@@ -388,85 +412,85 @@ export const AugustRevolutionSection = () => (
               </div>
               <div className="flex gap-3">
                 <span className="text-yellow-400 font-bold shrink-0">23/8:</span>
-                <span className="text-white/80">Hàng vạn người tiến vào thành phố, chiếm các công sở trọng yếu.  <strong className="text-green-400">Giành chính quyền trong hòa bình. </strong></span>
+                <span className="text-white/80">Hàng vạn người tiến vào thành phố, chiếm các công sở trọng yếu. <strong className="text-green-400">Giành chính quyền trong hòa bình.</strong></span>
               </div>
             </div>
           </div>
 
           {/* Sài Gòn */}
-          <div className="bg-white/10 border border-white/20 rounded-2xl overflow-hidden">
-            <div className="bg-orange-600 p-4">
+          <div className="bg-black/40 border border-white/10 rounded-2xl overflow-hidden hover:border-orange-500/50 transition-colors">
+            <div className="bg-gradient-to-r from-orange-700 to-orange-600 p-4">
               <div className="flex items-center gap-3">
                 <Building className="w-6 h-6" />
                 <div>
                   <h4 className="text-xl font-bold">Sài Gòn</h4>
-                  <p className="text-white/80 text-sm">25/8/1945</p>
+                  <p className="text-white/90 text-sm">25/8/1945</p>
                 </div>
               </div>
             </div>
             <div className="p-5 space-y-3 text-sm">
               <div className="flex gap-3">
                 <span className="text-yellow-400 font-bold shrink-0">25/8:</span>
-                <span className="text-white/80">Xứ ủy Nam Kỳ ấn định ngày khởi nghĩa. Các đoàn công nhân, nông dân, thanh niên từ Gia Định, Biên Hòa, Thủ Dầu Một, Mỹ Tho đổ về trung tâm. </span>
+                <span className="text-white/80">Xứ ủy Nam Kỳ ấn định ngày khởi nghĩa. Các đoàn công nhân, nông dân, thanh niên đổ về trung tâm.</span>
               </div>
               <div className="text-white/80">
-                Chiếm lĩnh Sở Mật thám, Sở Cảnh sát, Bưu điện, nhà ga, nhà máy điện...  
+                Chiếm lĩnh Sở Mật thám, Sở Cảnh sát, Bưu điện. 
                 <strong className="text-green-400"> Chính quyền bù nhìn nhanh chóng sụp đổ.</strong>
               </div>
             </div>
           </div>
         </div>
 
-        <p className="text-center text-yellow-200 mt-8 italic text-lg">
+        <p className="text-center text-yellow-200 mt-8 italic text-lg drop-shadow-md">
           "Từ thành thị đến nông thôn, từ miền xuôi đến miền ngược, từ đất liền đến hải đảo — phong trào khởi nghĩa dâng lên như vũ bão."
         </p>
-      </motion. div>
+      </motion.div>
 
       {/* Bảo Đại thoái vị */}
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="mb-12">
-        <div className="bg-purple-900/50 border border-purple-500/50 rounded-2xl p-6 text-center">
-          <Crown className="w-12 h-12 text-yellow-400 mx-auto mb-4" />
+        <div className="bg-purple-900/40 border border-purple-500/30 rounded-2xl p-6 text-center backdrop-blur-sm">
+          <Crown className="w-12 h-12 text-yellow-400 mx-auto mb-4 drop-shadow-lg" />
           <h3 className="text-2xl font-bold text-yellow-400 mb-2">Ngày 30/8/1945</h3>
           <p className="text-white text-lg">
             Vua <strong>Bảo Đại tuyên bố thoái vị</strong>, chấm dứt hoàn toàn 
             <strong className="text-yellow-400"> chế độ phong kiến kéo dài hàng nghìn năm</strong>. 
           </p>
         </div>
-      </motion. div>
+      </motion.div>
 
       {/* Ảnh Tuyên ngôn */}
       <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="mb-12">
-        <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-          <img src="images/declaration.jpg" alt="Tuyên ngôn Độc lập" className="w-full h-72 md:h-96 object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-red-900/80 via-transparent to-transparent" />
+        <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-yellow-500/20">
+          <img src="images/declaration.jpg" alt="Tuyên ngôn Độc lập" className="w-full h-72 md:h-full object-cover sepia-[0.3]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-red-900/90 via-transparent to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 text-center">
-            <p className="text-yellow-400 font-bold text-xl mb-1">2 tháng 9 năm 1945</p>
-            <p className="text-white text-lg">Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình</p>
+            <p className="text-yellow-400 font-bold text-xl mb-1 drop-shadow-md">2 tháng 9 năm 1945</p>
+            <p className="text-white text-lg font-medium">Chủ tịch Hồ Chí Minh đọc Tuyên ngôn Độc lập tại Quảng trường Ba Đình</p>
           </div>
         </div>
       </motion.div>
 
       {/* Tuyên ngôn */}
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-        className="bg-yellow-400 text-red-900 rounded-3xl p-8 md:p-12 text-center mb-12">
+        className="bg-gradient-to-b from-yellow-400 to-yellow-500 text-red-900 rounded-3xl p-8 md:p-12 text-center mb-12 shadow-2xl shadow-yellow-500/20">
         <div className="w-16 h-16 mx-auto mb-6">
-          <svg viewBox="0 0 100 100"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40" fill="#DC2626"/></svg>
+          <svg viewBox="0 0 100 100" className="drop-shadow-sm"><polygon points="50,5 61,40 98,40 68,62 79,97 50,75 21,97 32,62 2,40 39,40" fill="#991B1B"/></svg>
         </div>
-        <blockquote className="text-xl md:text-2xl font-serif italic leading-relaxed mb-4">
+        <blockquote className="text-xl md:text-2xl font-serif italic leading-relaxed mb-4 font-semibold">
           "Nước Việt Nam có quyền hưởng tự do và độc lập, và sự thật đã thành một nước tự do, độc lập. 
           Toàn thể dân tộc Việt Nam, quyết đem tất cả tinh thần và lực lượng, tính mạng và của cải để giữ vững quyền tự do, độc lập ấy."
         </blockquote>
-        <footer className="font-bold">— Tuyên ngôn Độc lập, 2/9/1945</footer>
-        <p className="mt-4 text-red-800">
+        <footer className="font-bold text-lg opacity-90">— Tuyên ngôn Độc lập, 2/9/1945</footer>
+        <p className="mt-6 text-red-950 font-medium border-t border-red-900/20 pt-6">
           <strong>Nước Việt Nam Dân chủ Cộng hòa ra đời</strong> — đánh dấu sự mở đầu kỷ nguyên mới của dân tộc: 
           kỷ nguyên độc lập, tự do và làm chủ vận mệnh đất nước. 
         </p>
-      </motion. div>
+      </motion.div>
 
       {/* Ý nghĩa */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-          className="bg-white/10 border border-white/20 rounded-2xl p-6">
+          className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-lg">
           <h3 className="text-xl font-bold text-yellow-400 mb-4 flex items-center gap-2">
             <CheckCircle className="w-5 h-5" />Ý nghĩa trong nước
           </h3>
@@ -478,7 +502,7 @@ export const AugustRevolutionSection = () => (
           </ul>
         </motion.div>
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
-          className="bg-white/10 border border-white/20 rounded-2xl p-6">
+          className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-lg">
           <h3 className="text-xl font-bold text-yellow-400 mb-4 flex items-center gap-2">
             <Users className="w-5 h-5" />Ý nghĩa quốc tế
           </h3>
@@ -493,8 +517,8 @@ export const AugustRevolutionSection = () => (
 
       {/* Kết luận */}
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-        className="bg-white/10 border border-white/20 rounded-2xl p-6 text-center">
-        <p className="text-white/90 leading-relaxed">
+        className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 text-center shadow-xl">
+        <p className="text-white/90 leading-relaxed text-lg">
           Cách mạng Tháng Tám năm 1945 giành thắng lợi là <strong className="text-yellow-400">kết quả tổng hòa của nhiều yếu tố</strong>, 
           trong đó nổi bật là sự kết hợp chặt chẽ giữa <strong className="text-yellow-400">thời cơ lịch sử thuận lợi</strong> với 
           <strong className="text-yellow-400"> sự chuẩn bị công phu, bài bản</strong> và 
