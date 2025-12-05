@@ -75,9 +75,9 @@ export const BOOK_LIBRARY = [
     }),
     bookmark: { front: "bookmark-1-front", back: "bookmark-1-back" },
     story: {
-      title: "Capital & Labour",
+      title: "Hành Trình Giành Lại Độc Lập và Khẳng Định Giá Trị Tự Do",
       paragraphs: [
-        "Bức ảnh Capital & Labour là một hình ảnh châm biếm minh hoạ sự bóc lột giai cấp.",
+        "Hai bìa sách cùng khắc họa hành trình đấu tranh của dân tộc Việt Nam từ những ngày đầu vận động cách mạng đến khi giành được độc lập và xây dựng một kỷ nguyên tự do mới; bìa trước mô tả các mốc lịch sử dẫn đến Cách mạng Tháng Tám và ngày độc lập, trong khi bìa sau khẳng định ý nghĩa thiêng liêng của tự do – độc lập và trách nhiệm của các thế hệ tiếp bước bảo vệ thành quả ấy.",
       ],
     },
   },
