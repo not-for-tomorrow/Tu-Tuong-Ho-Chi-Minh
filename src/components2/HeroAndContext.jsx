@@ -76,7 +76,7 @@ export const ContextSection = () => (
     <div className="max-w-6xl mx-auto px-6">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
         <span className="inline-block bg-red-100 text-red-700 px-4 py-1 rounded-full text-sm font-medium mb-4">Bối cảnh lịch sử</span>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif mb-4">Tại sao 1941–1945 là bước ngoặt? </h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif mb-4">Tại sao 1941–1945 là bước ngoặc? </h2>
       </motion.div>
 
       <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}

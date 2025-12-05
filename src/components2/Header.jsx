@@ -11,9 +11,9 @@ export const Header = ({ onTogglePage }) => {
   const navLinks = [
     { href: "#overview", label: "Tổng quan" },
     { href: "#context", label: "Bối cảnh" },
+        { href: "#timeline", label: "Dòng thời gian" },
     { href: "#return-home", label: "Trở về quê hương" },
     { href: "#preparation", label: "Chuẩn bị lực lượng" },
-    { href: "#timeline", label: "Dòng thời gian" },
     { href: "#famine", label: "Nạn đói 1945" },
     { href: "#august-revolution", label: "Cách mạng tháng Tám" },
   ];
