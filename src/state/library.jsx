@@ -58,18 +58,22 @@ export const BOOK_LIBRARY = [
     title: "Notebook linh hoạt",
     pages: buildNotebookPagesFlexible({
       coverFront: "page-01-front",
-      coverFrontBack: "phu-page-2", // mặt sau của bìa trước
-      coverBackFront: "phu-page-3", // mặt trước của bìa sau
+      coverFrontBack: "page-1", // mặt sau của bìa trước
+      coverBackFront: "page-18", // mặt trước của bìa sau
       coverBack: "page-01-back",
-      ruledTexture: "khang-page-1",
+      ruledTexture: "",
       images: [
-        "huy-page-2", "huy-page-3",
-        "huy-page-4", "thien-page-1",
-        "thien-page-2", "thien-page-3",
-        "thien-page-2", "thien-page-3",
+        "page-2", "page-3",
+        "page-4", "page-5",
+        "page-6", "page-7",
+        "page-8", "page-9",
+        "page-10", "page-11",
+        "page-12", "page-13",
+        "page-14", "page-15",
+        "page-16", "page-17",
       ],
     }),
-    bookmark: { front: "huy-bookmark-1", back: "huy-bookmark-3" },
+    bookmark: { front: "bookmark-1-front", back: "bookmark-1-back" },
     story: {
       title: "Capital & Labour",
       paragraphs: [
