@@ -185,9 +185,9 @@ export const TrainingSection = () => (
 
 // ==================== LIBERATION ARMY SECTION ====================
 export const LiberationArmySection = () => (
-  <section className="relative py-20 overflow-hidden text-white">
-    {/* Video Background Layer */}
-    <div className="absolute inset-0 z-0">
+  <section className="relative min-h-screen bg-red-900 text-white" style={{ clipPath: "inset(0)" }}>
+    {/* Sticky Video Background */}
+    <div className="fixed top-0 left-0 w-full h-full z-0">
       <video
         autoPlay
         loop
@@ -195,17 +195,19 @@ export const LiberationArmySection = () => (
         playsInline
         className="w-full h-full object-cover opacity-50 mix-blend-luminosity grayscale-[0.5] sepia-[0.4] contrast-125"
       >
-        <source src="/videos/liberation.mp4" type="video/mp4" />
+        {/* SỬA LỖI QUAN TRỌNG: Bỏ dấu '/' ở đầu để khớp với thư mục deploy trên GitHub Pages */}
+        {/* Hoặc dùng: "/Tu-Tuong-Ho-Chi-Minh/videos/liberation.mp4" nếu muốn tuyệt đối */}
+        <source src="videos/liberation.mp4" type="video/mp4" />
       </video>
       
-      {/* Overlay Gradient: Tông đỏ đậm, tạo không khí nghiêm trang, hào hùng */}
+      {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-red-900/95 via-red-800/90 to-red-950/95 mix-blend-multiply" />
       
-      {/* Noise texture - giả lập nhiễu hạt film cũ */}
+      {/* Noise texture */}
       <div className="absolute inset-0 opacity-[0.15] bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
     </div>
 
-    <div className="relative z-10 max-w-6xl mx-auto px-6">
+    <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
       <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
         <div className="inline-flex items-center gap-2 bg-yellow-500 text-red-900 px-4 py-2 rounded-full font-bold mb-6 shadow-lg shadow-red-900/50">
           <Sword className="w-5 h-5" />
@@ -217,7 +219,7 @@ export const LiberationArmySection = () => (
 
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500/20">
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-yellow-500/20 bg-red-900/50">
             <img src="images/liberation-army.jpg" alt="34 chiến sĩ Đội VNTTGPQ" className="w-full h-80 object-cover sepia-[0.2]" />
             <div className="absolute inset-0 bg-gradient-to-t from-red-900/90 via-transparent to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -229,14 +231,14 @@ export const LiberationArmySection = () => (
 
         <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
           <div className="space-y-6">
-            <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-black/40 transition-colors">
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-black/50 transition-colors">
               <h3 className="font-bold text-yellow-400 mb-3 uppercase tracking-wide text-sm">Nguyên tắc hoạt động</h3>
               <blockquote className="text-white/90 italic border-l-4 border-yellow-500 pl-4 py-1">
                 "Chính trị trọng hơn quân sự. Nó là đội tuyên truyền."
               </blockquote>
             </div>
 
-            <div className="bg-black/30 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-black/40 transition-colors">
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-xl hover:bg-black/50 transition-colors">
               <h3 className="font-bold text-yellow-400 mb-3 uppercase tracking-wide text-sm">Đường lối kháng chiến</h3>
               <p className="text-white/90 text-sm leading-relaxed">
                 "Cuộc kháng chiến của ta là cuộc kháng chiến của toàn dân, cần phải <strong className="text-yellow-300">động viên toàn dân, vũ trang toàn dân</strong>.  
