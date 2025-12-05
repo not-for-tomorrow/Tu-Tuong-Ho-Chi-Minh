@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, BookOpen, Sparkles } from "lucide-react";
+import { Menu, X, BookOpen, Sparkles, Maximize2 } from "lucide-react";
 
 export const Header = ({ onTogglePage, currentPage }) => {
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("#banner");
   const [scrolled, setScrolled] = useState(false);
+  const navigate = useNavigate();
 
   const toggleButtonLabel = currentPage === 'notebook' ? "Khám phá Tư Tưởng" : "Về Sổ Tay";
   const ToggleIcon = currentPage === 'notebook' ? Sparkles : BookOpen;
@@ -110,16 +112,33 @@ export const Header = ({ onTogglePage, currentPage }) => {
           )}
         </nav>
 
-        {/* CTA Button */}
-        <motion.button
-          onClick={onTogglePage}
-          className="hidden md:flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-red-900 font-bold px-5 py-2 rounded-full transition-all shadow-lg ml-4 min-w-[180px] justify-center"
-          whileHover={{ scale: 1.04 }}
-          whileTap={{ scale: 0.96 }}
-        >
-          <span>{toggleButtonLabel}</span>
-          <ToggleIcon className="w-4 h-4" />
-        </motion.button>
+        {/* CTA Buttons */}
+        <div className="hidden md:flex items-center gap-2 ml-4">
+          {/* Fullscreen 3D Book Button */}
+          {currentPage === 'notebook' && (
+            <motion.button
+              onClick={() => navigate('/fullscreen-book')}
+              className="flex items-center gap-2 bg-red-600 hover:bg-red-500 text-yellow-400 font-bold px-4 py-2 rounded-full transition-all shadow-lg border border-yellow-500/50"
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.96 }}
+              title="Xem Sổ Tay 3D toàn màn hình"
+            >
+              <Maximize2 className="w-4 h-4" />
+              <span>Sổ Tay 3D - Full</span>
+            </motion.button>
+          )}
+
+          {/* Toggle Page Button */}
+          <motion.button
+            onClick={onTogglePage}
+            className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-red-900 font-bold px-5 py-2 rounded-full transition-all shadow-lg min-w-[180px] justify-center"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
+          >
+            <span>{toggleButtonLabel}</span>
+            <ToggleIcon className="w-4 h-4" />
+          </motion.button>
+        </div>
 
         {/* Mobile menu button */}
         <button
@@ -155,6 +174,19 @@ export const Header = ({ onTogglePage, currentPage }) => {
                   </a>
                 </li>
               ))}
+              {currentPage === 'notebook' && (
+                <li className="pt-2">
+                  <button 
+                    onClick={() => {
+                      navigate('/fullscreen-book');
+                      setOpen(false);
+                    }}
+                    className="w-full bg-red-600 text-yellow-400 font-bold px-6 py-3 rounded-full flex items-center justify-center gap-2 border border-yellow-500/50"
+                  >
+                    <Maximize2 size={18} /> Sổ Tay 3D - Full
+                  </button>
+                </li>
+              )}
               <li className="pt-2">
                 <button 
                   onClick={() => {

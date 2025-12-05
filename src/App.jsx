@@ -1,13 +1,15 @@
 import { useState } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Header as NotebookHeader } from "./components/Header";
 import { Header as ThoughtHeader } from "./components2/Header";
 
 import NotebookPage from "./pages/NotebookPage";
 import ThoughtPage from "./pages/ThoughtPage";
+import FullscreenBookPage from "./pages/FullscreenBookPage";
 import "./index.css";
 
-function App() {
+function MainContent() {
   const [pageState, setPageState] = useState("notebook");
 
   const togglePage = () => {
@@ -54,6 +56,19 @@ function App() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+function App() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<MainContent />} />
+        <Route path="/fullscreen-book" element={<FullscreenBookPage />} />
+      </Routes>
+    </AnimatePresence>
   );
 }
 
