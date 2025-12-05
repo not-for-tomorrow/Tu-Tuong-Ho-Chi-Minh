@@ -7,21 +7,35 @@ import Footer from "../components/Footer";
 const ThoughtPage = () => (
   <div className="min-h-screen bg-slate-50">
     {/* Phần 1: Giới thiệu & Bối cảnh */}
-    <HeroSection />
-    <ContextSection />
-    <ReturnHomeSection />
+    <section id="overview">
+      <HeroSection />
+    </section>
+    <section id="context">
+      <ContextSection />
+    </section>
+    <section id="return-home">
+      <ReturnHomeSection />
+    </section>
     
     {/* Phần 2: Chuẩn bị lực lượng */}
-    <VietMinhSection />
-    <TrainingSection />
-    <LiberationArmySection />
+    <section id="preparation">
+      <VietMinhSection />
+      <TrainingSection />
+      <LiberationArmySection />
+    </section>
     
     {/* Phần 3: Timeline dọc các mốc sự kiện */}
-    <TimelineSection />
+    <section id="timeline">
+      <TimelineSection />
+    </section>
     
     {/* Phần 4: Nạn đói & Cách mạng */}
-    <FamineSection />
-    <AugustRevolutionSection />
+    <section id="famine">
+      <FamineSection />
+    </section>
+    <section id="august-revolution">
+      <AugustRevolutionSection />
+    </section>
     
     {/* Footer */}
     <Footer />

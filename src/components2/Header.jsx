@@ -10,11 +10,12 @@ export const Header = ({ onTogglePage }) => {
   // 🟢 DANH SÁCH MENU CHO TRANG TƯ TƯỞNG (Bạn chỉnh sửa ở đây)
   const navLinks = [
     { href: "#overview", label: "Tổng quan" },
-    { href: "#core-values", label: "Giá trị cốt lõi" },
-    { href: "#timeline", label: "Tiểu sử" },
-    { href: "#documents", label: "Tài liệu" },
-    { href: "#stories", label: "Câu chuyện" },
-    { href: "#gallery", label: "Thư viện ảnh" },
+    { href: "#context", label: "Bối cảnh" },
+    { href: "#return-home", label: "Trở về quê hương" },
+    { href: "#preparation", label: "Chuẩn bị lực lượng" },
+    { href: "#timeline", label: "Dòng thời gian" },
+    { href: "#famine", label: "Nạn đói 1945" },
+    { href: "#august-revolution", label: "Cách mạng tháng Tám" },
   ];
 
   useEffect(() => {
