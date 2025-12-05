@@ -209,12 +209,6 @@ Mọi ý kiến đóng góp, báo lỗi, thêm nội dung...  xin vui lòng:
 
 ---
 
-## 📄 Giấy phép
-
-Dự án được phân phối dưới giấy phép [MIT License](LICENSE).
-
----
-
 ## 🙏 Nguồn hình ảnh
 
 Các hình ảnh sử dụng trong README thuộc phạm vi **Public Domain** từ [Wikimedia Commons](https://commons.wikimedia.org/wiki/Category:Ho_Chi_Minh). 
