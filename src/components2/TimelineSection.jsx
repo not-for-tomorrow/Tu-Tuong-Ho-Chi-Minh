@@ -310,6 +310,18 @@ const timelineData = [
     image: "images/timeline21.jpg",
     imageCaption: "Bảo Đại thoái vị"
   },
+   {
+    date: "28/08 - 31/08/1945",
+    title: "Soạn thảo Tuyên ngôn Độc lập",
+    location: "48 Hàng Ngang, Hà Nội",
+    icon: FileText, 
+    color: "bg-red-700",
+    category: "1945",
+    content: "Hồ Chí Minh soạn thảo và hoàn thiện bản Tuyên ngôn Độc lập tại tầng 2, nhà số 48 Hàng Ngang.",
+    highlight: "Văn bản pháp lý đặt nền móng cho nước Việt Nam mới, khẳng định quyền tự do và độc lập.",
+    image: "images/timeline22.jpg", 
+    imageCaption: "Ngôi nhà 48 Hàng Ngang nơi Bác Hồ soạn thảo Tuyên ngôn"
+  },
   {
     date: "02/09/1945",
     title: "Tuyên ngôn Độc lập",
