@@ -17,11 +17,11 @@ const HO_CHI_MINH_QUOTES = [
     source: "Hồ Chí Minh"
   },
   {
-  quote: "[translate:Tự lực, tự cường, từng bước vượt khó khăn.]",
+  quote: "Tự lực, tự cường, từng bước vượt khó khăn.",
   source: "Hồ Chí Minh"
 },
 {
-  quote: "[translate:Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công.]",
+  quote: "Đoàn kết, đoàn kết, đại đoàn kết. Thành công, thành công, đại thành công.",
   source: "Hồ Chí Minh"
 }
 ];
