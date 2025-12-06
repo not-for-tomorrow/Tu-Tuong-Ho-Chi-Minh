@@ -8,13 +8,13 @@ import Introduction from "../components/Introduction";
 import Applicability from "../components/Applicability";
 import ShowTechnology from "../components/Showtechnology/Showtechnology";
 import ShowBannerTechnology from "../components/Showtechnology/Showbannertechnology";
+import AboutUs from "../components/AboutUs";
 import { Footer } from "../components/Footer";
 
 const NotebookPage = () => {
   const bookRef = useRef();
 
   return (
-    // Thêm bg-white cho wrapper chính để các phần dưới (Giới thiệu, Sách...) có nền trắng chuẩn
     <div className="min-h-screen bg-white">
       <main className="scroll-smooth">
         <div id="banner" className="-mt-[80px] pt-[80px] bg-red-800">
@@ -55,6 +55,11 @@ const NotebookPage = () => {
         </section>
         <section id="technology">
           <ShowTechnology />
+        </section>
+
+        {/* About Us Section */}
+        <section id="about-us">
+          <AboutUs />
         </section>
       </main>
 
