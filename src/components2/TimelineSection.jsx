@@ -13,7 +13,9 @@ const timelineData = [
     color: "bg-red-600",
     content: "Lãnh tụ Nguyễn Ái Quốc qua mốc 108 (nay là cột mốc 675) biên giới Việt Nam - Trung Quốc về đến Pác Bó, xã Trường Hà, huyện Hà Quảng, tỉnh Cao Bằng.",
     highlight: "Kết thúc 30 năm bôn ba nước ngoài, trực tiếp lãnh đạo cách mạng",
-    detail: "Pác Bó - Hà Quảng - Cao Bằng trở thành 'đại bản doanh' của căn cứ Việt Bắc, 'cội nguồn', 'chiếc nôi của cách mạng Việt Nam'."
+    detail: "Pác Bó - Hà Quảng - Cao Bằng trở thành 'đại bản doanh' của căn cứ Việt Bắc, 'cội nguồn', 'chiếc nôi của cách mạng Việt Nam'.",
+    image: "images/timeline1.jpg",
+    imageCaption: "Nguyễn Ái Quốc trở về tổ quốc"
   },
   {
     date: "19/05/1941",
@@ -23,7 +25,9 @@ const timelineData = [
     color: "bg-yellow-500",
     content: "Hội nghị Trung ương Đảng lần thứ 8 quyết định thành lập Mặt trận Việt Nam độc lập đồng minh (Việt Minh).",
     highlight: "Lấy cờ đỏ sao vàng năm cánh làm cờ Việt Minh và sẽ làm cờ Tổ quốc",
-    detail: "Mặt trận Việt Minh ra đời với Tuyên ngôn, Chương trình và Điều lệ cụ thể, nêu rõ chính sách về chính trị, kinh tế, văn hóa, giáo dục, xã hội, ngoại giao."
+    detail: "Mặt trận Việt Minh ra đời với Tuyên ngôn, Chương trình và Điều lệ cụ thể, nêu rõ chính sách về chính trị, kinh tế, văn hóa, giáo dục, xã hội, ngoại giao.",
+    image: "images/timeline2.jpg",
+    imageCaption: "Thành lập Mặt trận Việt Minh"
   },
   {
     date: "06/06/1941",
@@ -33,7 +37,9 @@ const timelineData = [
     color: "bg-blue-600",
     content: "Nguyễn Ái Quốc viết thư kêu gọi toàn dân đoàn kết.",
     highlight: "\"Người có tiền góp tiền, người có của góp của, người có sức góp sức, người có tài năng góp tài năng\"",
-    detail: "\"Riêng phần tôi, xin đem hết tâm lực đi cùng các bạn, vì đồng bào mưu giành tự do độc lập, dầu phải hy sinh tính mệnh cũng không nề.\""
+    detail: "\"Riêng phần tôi, xin đem hết tâm lực đi cùng các bạn, vì đồng bào mưu giành tự do độc lập, dầu phải hy sinh tính mệnh cũng không nề.\"",
+    image: "images/timeline3.jpg",
+    imageCaption: "Bức Thư Kính cáo đồng bào"
   },
   {
     date: "10/1941",
@@ -42,7 +48,9 @@ const timelineData = [
     icon: Sword,
     color: "bg-green-600",
     content: "Đội du kích tập trung đầu tiên của tỉnh Cao Bằng được thành lập tại Pác Bó.",
-    highlight: "Hạt nhân đầu tiên của lực lượng vũ trang cách mạng"
+    highlight: "Hạt nhân đầu tiên của lực lượng vũ trang cách mạng",
+    image: "images/timeline4.jpg",
+    imageCaption: "Đội du kích đầu tiên"
   },
   {
     date: "02/1942",
@@ -52,7 +60,9 @@ const timelineData = [
     color: "bg-purple-600",
     content: "Nguyễn Ái Quốc viết tác phẩm 'Lịch sử nước ta' theo thể thơ lục bát gồm 208 câu, kèm bảng liệt kê 'Những năm quan trọng'.",
     highlight: "Dự đoán thiên tài: '1945 Việt Nam độc lập'",
-    detail: "Tác phẩm nhằm giáo dục lịch sử cho quần chúng, nâng cao tinh thần yêu nước."
+    detail: "Tác phẩm nhằm giáo dục lịch sử cho quần chúng, nâng cao tinh thần yêu nước.",
+    image: "images/timeline5.jpg",
+    imageCaption: "Tác phẩm Lịch sử nước ta"
   },
   {
     date: "06/1941 - 04/1942",
@@ -62,7 +72,9 @@ const timelineData = [
     color: "bg-teal-600",
     content: "300 cán bộ được bồi dưỡng, huấn luyện tại Cao Bằng.",
     highlight: "Những hạt giống cách mạng đầu tiên",
-    detail: "Từ những hạt giống này, các cơ sở cách mạng, các tổ chức cứu quốc nhanh chóng phát triển khắp địa phương."
+    detail: "Từ những hạt giống này, các cơ sở cách mạng, các tổ chức cứu quốc nhanh chóng phát triển khắp địa phương.",
+    image: "images/timeline6.jpg",
+    imageCaption: "300 cán bộ được đào tạo"
   },
   {
     date: "04/1941 - 10/1944",
@@ -72,7 +84,9 @@ const timelineData = [
     color: "bg-orange-600",
     content: "Cán bộ được học quân sự tại các trường quân sự ở Trung Quốc.",
     highlight: "Hạt nhân quan trọng trong lực lượng vũ trang",
-    detail: "Đây là những hạt nhân quan trọng của căn cứ địa cách mạng Cao-Bắc-Lạng và khu giải phóng sau này."
+    detail: "Đây là những hạt nhân quan trọng của căn cứ địa cách mạng Cao-Bắc-Lạng và khu giải phóng sau này.",
+    image: "images/timeline7.jpg",
+    imageCaption: "Huấn luyện quân sự"
   },
   {
     date: "06/1943",
@@ -82,7 +96,9 @@ const timelineData = [
     color: "bg-indigo-600",
     content: "Trung ương mở các lớp 'quân chính': Khóa I (40 học viên), Khóa II (100 học viên), Khóa III (30 học viên), Khóa IV (cán bộ Cao-Bắc-Lạng).",
     highlight: "Chương trình theo sách huấn luyện du kích của Nguyễn Ái Quốc",
-    detail: "Tài liệu: 'Mười điều kỷ luật', 'Chiến thuật cơ bản của du kích', 'Cách đánh du kích', 'Kinh nghiệm du kích Nga', 'Kinh nghiệm du kích Tàu'..."
+    detail: "Tài liệu: 'Mười điều kỷ luật', 'Chiến thuật cơ bản của du kích', 'Cách đánh du kích', 'Kinh nghiệm du kích Nga', 'Kinh nghiệm du kích Tàu'...",
+    image: "images/timeline8.jpg",
+    imageCaption: "Các lớp Quân chính"
   },
   {
     date: "22/12/1944",
@@ -103,7 +119,9 @@ const timelineData = [
     icon: Sword,
     color: "bg-red-600",
     content: "Chiến thắng đầu tiên của Đội Việt Nam Tuyên truyền Giải phóng quân.",
-    highlight: "Chiến công tiêu biểu cho sức mạnh mưu trí và tinh thần quả cảm"
+    highlight: "Chiến công tiêu biểu cho sức mạnh mưu trí và tinh thần quả cảm",
+    image: "images/timeline9.jpg",
+    imageCaption: "Chiến Trận Phai Khắt"
   },
   {
     date: "26/12/1944",
@@ -112,7 +130,9 @@ const timelineData = [
     icon: Sword,
     color: "bg-red-600",
     content: "Chiến thắng thứ hai của Đội Việt Nam Tuyên truyền Giải phóng quân.",
-    highlight: "Đội quân chính quy đầu tiên của cách mạng Việt Nam"
+    highlight: "Đội quân chính quy đầu tiên của cách mạng Việt Nam",
+    image: "images/timeline10.jpg",
+    imageCaption: "Chiến Trận Nà Ngần"
   },
   {
     date: "1940-1945",
@@ -145,7 +165,9 @@ const timelineData = [
     icon: Users,
     color: "bg-blue-700",
     content: "Tổng bộ Việt Minh chỉ đạo thành lập các Ủy ban dân tộc giải phóng từ Trung ương đến địa phương.",
-    highlight: "Chuẩn bị bộ máy chính quyền cách mạng"
+    highlight: "Chuẩn bị bộ máy chính quyền cách mạng",
+    image: "images/timeline11.jpg",
+    imageCaption: "Ủy ban dân tộc giải phóng"
   },
   {
     date: "Đầu 05/1945",
@@ -154,7 +176,9 @@ const timelineData = [
     icon: MapPin,
     color: "bg-green-700",
     content: "Chủ tịch Hồ Chí Minh từ Cao Bằng về Tuyên Quang, chọn Tân Trào làm căn cứ chỉ đạo toàn quốc.",
-    highlight: "Thủ đô kháng chiến"
+    highlight: "Thủ đô kháng chiến",
+    image: "images/timeline12.jpg",
+    imageCaption: "Căn cứ Tân Trào"
   },
   {
     date: "04/06/1945",
@@ -163,7 +187,9 @@ const timelineData = [
     icon: Flag,
     color: "bg-green-600",
     content: "Khu Giải phóng Việt Bắc chính thức được thành lập.",
-    highlight: "Căn cứ địa vững chắc của cách mạng"
+    highlight: "Căn cứ địa vững chắc của cách mạng",
+    image: "images/timeline13.jpg",
+    imageCaption: "Khu Giải phóng Việt Bắc"
   },
   {
     date: "13/08/1945",
@@ -173,7 +199,9 @@ const timelineData = [
     color: "bg-red-600",
     content: "Ủy ban Khởi nghĩa toàn quốc được thành lập và ngay trong ngày đã ra Quân lệnh số 1.",
     highlight: "Phát động tổng khởi nghĩa trên toàn quốc",
-    detail: "Thời cơ cách mạng đã chín muồi.  Trung ương Đảng nhận định: Đây là thời cơ 'ngàn năm có một'."
+    detail: "Thời cơ cách mạng đã chín muồi.  Trung ương Đảng nhận định: Đây là thời cơ 'ngàn năm có một'.",
+    image: "images/timeline14.jpg",
+    imageCaption: "Quân lệnh số 1"
   },
   {
     date: "16/08/1945",
@@ -183,7 +211,9 @@ const timelineData = [
     color: "bg-yellow-600",
     content: "Quốc dân đại hội họp tại Tân Trào.",
     highlight: "Thông qua 10 chính sách lớn, chọn Quốc kỳ cờ đỏ sao vàng, Quốc ca 'Tiến quân ca'",
-    detail: "Cử ra Ủy ban Giải phóng dân tộc Việt Nam (Chính phủ Lâm thời) do Chủ tịch Hồ Chí Minh đứng đầu."
+    detail: "Cử ra Ủy ban Giải phóng dân tộc Việt Nam (Chính phủ Lâm thời) do Chủ tịch Hồ Chí Minh đứng đầu.",
+    image: "images/timeline15.jpg",
+    imageCaption: "Quốc dân đại hội Tân Trào"
   },
   {
     date: "17/08/1945",
@@ -193,7 +223,9 @@ const timelineData = [
     color: "bg-red-500",
     content: "Hàng vạn quần chúng từ nội, ngoại thành tham gia mít tinh lớn tại Nhà hát Lớn.",
     highlight: "Hô vang 'Ủng hộ Việt Minh! ', 'Việt Nam độc lập!'",
-    detail: "Tuần hành qua các phố trung tâm."
+    detail: "Tuần hành qua các phố trung tâm.",
+    image: "images/timeline16.jpg",
+    imageCaption: "Mít tinh Nhà hát Lớn"
   },
   {
     date: "18/08/1945",
@@ -202,7 +234,9 @@ const timelineData = [
     icon: Flag,
     color: "bg-red-500",
     content: "Cờ đỏ sao vàng rực rỡ trên nhiều tuyến phố chính Hà Nội.",
-    highlight: "Khí thế cách mạng dâng cao"
+    highlight: "Khí thế cách mạng dâng cao",
+    image: "images/timeline17.jpg",
+    imageCaption: "Cờ đỏ sao vàng tung bay"
   },
   {
     date: "19/08/1945",
@@ -212,7 +246,9 @@ const timelineData = [
     color: "bg-red-600",
     content: "Tổng khởi nghĩa nổ ra với khí thế áp đảo.  Chiếm Phủ Khâm sai Bắc Bộ, Sở Cảnh sát, Sở Bưu điện, Trại Bảo an binh.",
     highlight: "Đêm 19/8, hoàn toàn làm chủ Thủ đô",
-    detail: "Chính quyền Bảo Đại - Trần Trọng Kim tan rã."
+    detail: "Chính quyền Bảo Đại - Trần Trọng Kim tan rã.",
+    image: "images/timeline18.jpg",
+    imageCaption: "Khởi nghĩa Hà Nội thắng lợi"
   },
   {
     date: "23/08/1945",
@@ -222,7 +258,9 @@ const timelineData = [
     color: "bg-purple-600",
     content: "Hàng vạn người tiến vào thành phố, chiếm các công sở trọng yếu.",
     highlight: "Giành chính quyền trong hòa bình",
-    detail: "Từ ngày 20/8: Thành lập Ủy ban Khởi nghĩa tỉnh.  Từ 21/8: Hàng loạt cuộc biểu tình thị uy tạo thế áp đảo."
+    detail: "Từ ngày 20/8: Thành lập Ủy ban Khởi nghĩa tỉnh.  Từ 21/8: Hàng loạt cuộc biểu tình thị uy tạo thế áp đảo.",
+    image: "images/timeline19.jpg",
+    imageCaption: "Khởi nghĩa Huế thắng lợi"
   },
   {
     date: "25/08/1945",
@@ -232,7 +270,9 @@ const timelineData = [
     color: "bg-orange-600",
     content: "Các đoàn công nhân, nông dân, thanh niên từ Gia Định, Biên Hòa, Thủ Dầu Một, Mỹ Tho đổ về trung tâm.",
     highlight: "Chính quyền bù nhìn nhanh chóng sụp đổ",
-    detail: "Chiếm lĩnh Sở Mật thám, Sở Cảnh sát, Bưu điện, nhà ga, nhà máy điện...  Chính quyền cách mạng được thiết lập."
+    detail: "Chiếm lĩnh Sở Mật thám, Sở Cảnh sát, Bưu điện, nhà ga, nhà máy điện...  Chính quyền cách mạng được thiết lập.",
+    image: "images/timeline20.jpg",
+    imageCaption: "Khởi nghĩa Sài Gòn thắng lợi"
   },
   {
     date: "30/08/1945",
@@ -241,7 +281,9 @@ const timelineData = [
     icon: Crown,
     color: "bg-purple-700",
     content: "Vua Bảo Đại tuyên bố thoái vị.",
-    highlight: "Chấm dứt hoàn toàn chế độ phong kiến kéo dài hàng nghìn năm"
+    highlight: "Chấm dứt hoàn toàn chế độ phong kiến kéo dài hàng nghìn năm",
+    image: "images/timeline21.jpg",
+    imageCaption: "Bảo Đại thoái vị"
   },
   {
     date: "02/09/1945",
