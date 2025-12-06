@@ -19,7 +19,6 @@ export const Header = ({ onTogglePage, currentPage }) => {
     { href: "#description", label: "Mô tả sản phẩm" },
     { href: "#applicability", label: "Ứng dụng" },
     { href: "#technology-banner", label: "Công nghệ" },
-    { href: "#contact", label: "Liên hệ" },
   ];
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import { Calendar, MapPin, Flag, AlertTriangle, Users, Flame, Sword, Star, Targe
 
 // ==================== HERO SECTION ====================
 export const HeroSection = () => (
-  <section id="overview" className="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-red-900">
+  <section id="overview" className="relative min-h-[100vh] flex items-center justify-center overflow-hidden bg-red-900">
     {/* VIDEO BACKGROUND LAYER */}
     <div className="absolute inset-0 z-0">
       {/* Video gốc với bộ lọc tạo màu cũ */}

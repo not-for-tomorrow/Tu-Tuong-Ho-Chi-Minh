@@ -206,7 +206,7 @@ export const Banner = () => {
         )}
 
         {/* Stats section */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+        {/* <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { number: "134+", label: "Năm di sản" },
             { number: "1000+", label: "Bài viết" },
@@ -218,7 +218,7 @@ export const Banner = () => {
               <div className="text-sm text-yellow-100/80 mt-1">{stat.label}</div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

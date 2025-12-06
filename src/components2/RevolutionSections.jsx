@@ -148,7 +148,7 @@ export const FamineSection = () => (
         {[
           { value: "2 triệu+", label: "Người chết đói", icon: Skull },
           { value: "32", label: "Tỉnh bị ảnh hưởng", icon: MapPin },
-          { value: "900. 000", label: "Tấn gạo bị trưng thu", icon: TrendingUp },
+          { value: "900.000", label: "Tấn gạo bị trưng thu", icon: TrendingUp },
           { value: "800đ/tạ", label: "Giá gạo chợ đen", icon: AlertCircle },
         ].map((stat, i) => (
           <motion.div key={i} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
@@ -167,10 +167,10 @@ export const FamineSection = () => (
             <Skull className="w-5 h-5" />Nguyên nhân chi tiết
           </h3>
           <ul className="space-y-3 text-gray-300 text-sm">
-            <li>• Nhật trưng thu <strong>hơn 900. 000 tấn gạo</strong> để nuôi chiến tranh phát xít</li>
+            <li>• Nhật trưng thu <strong>hơn 900.000 tấn gạo</strong> để nuôi chiến tranh phát xít</li>
             <li>• Pháp dùng thóc <strong>đốt lò thay than đá</strong> và nấu rượu</li>
             <li>• Hàng chục nghìn mẫu ngô bị phá, hàng triệu tấn thóc bị thu nộp</li>
-            <li>• Diện tích trồng đay tăng từ <strong>5. 000 ha → 45.000 ha</strong> (thay ruộng lúa)</li>
+            <li>• Diện tích trồng đay tăng từ <strong>5.000 ha → 45.000 ha</strong> (thay ruộng lúa)</li>
             <li>• Nhật <strong>cấm vận chuyển lúa</strong> từ miền Nam ra Bắc</li>
             <li>• Mất mùa năm 1944, thiên tai, chiến tranh làm đứt gãy giao thông</li>
           </ul>

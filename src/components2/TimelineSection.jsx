@@ -122,7 +122,7 @@ const timelineData = [
     color: "bg-gray-800",
     content: "Phát xít Nhật xâm lược Đông Dương, thiết lập chế độ cai trị hà khắc, trưng thu lương thực phục vụ chiến tranh.",
     highlight: "Đông Dương dưới ách đô hộ kép Pháp - Nhật",
-    detail: "Năm 1944, Nhật buộc Pháp cung cấp hơn 900. 000 tấn gạo, cấm vận chuyển lúa từ miền Nam ra Bắc.",
+    detail: "Năm 1944, Nhật buộc Pháp cung cấp hơn 900.000 tấn gạo, cấm vận chuyển lúa từ miền Nam ra Bắc.",
     image: "images/japanese-invasion.jpg",
     imageCaption: "Quân phát xít Nhật tiến vào Hải Phòng"
   },
