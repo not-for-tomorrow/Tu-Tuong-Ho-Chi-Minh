@@ -67,7 +67,7 @@ const timelineData = [
     content: "Nguyễn Ái Quốc viết tác phẩm 'Lịch sử nước ta' theo thể thơ lục bát gồm 208 câu, kèm bảng liệt kê 'Những năm quan trọng'.",
     highlight: "Dự đoán thiên tài: '1945 Việt Nam độc lập'",
     detail: "Tác phẩm nhằm giáo dục lịch sử cho quần chúng, nâng cao tinh thần yêu nước.",
-    image: "images/timeline5. jpg",
+    image: "images/timeline5.jpg",
     imageCaption: "Tác phẩm Lịch sử nước ta"
   },
   {
