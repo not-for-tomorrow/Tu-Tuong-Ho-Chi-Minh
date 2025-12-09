@@ -37,7 +37,7 @@ Dự án sử dụng **React**, **Vite**, **Three.js** và nhiều công nghệ 
 
 <div align="center">
 
-| <img src="https://media.baothaibinh.com.vn/upload/news/5_2012/9156_1.jpg" width="500"/> | <img src="https://businesswiki.codx.vn/wp-content/uploads/2023/05/chu-ky-cua-bac-ho-1.jpg" width="500"/> | <img src="https://baonamdinh.vn/file/e7837c02816d130b0181a995d7ad7e96/dataimages/201604/original/images1247125_1.jpg" width="500"/> |
+| <img src="https://media.baothaibinh.com.vn/upload/news/5_2012/9156_1.jpg" width="500"/> | <img src="https://businesswiki.codx.vn/chu-ky-cua-bac-ho/" width="500"/> | <img src="https://baonamdinh.vn/file/e7837c02816d130b0181a995d7ad7e96/dataimages/201604/original/images1247125_1.jpg" width="500"/> |
 |:---:|:---:|:---:|
 | *Bác Hồ với thiếu nhi* | *Chân dung và chữ ký* | *Tượng đài Bác Hồ* |
 
@@ -246,6 +246,6 @@ Các hình ảnh sử dụng trong README thuộc phạm vi **Public Domain** t�
 
 ---
 
-<sub>© 2024 - Sổ Tay 3D Tư Tưởng Hồ Chí Minh</sub>
+<sub>© 2025 - Sổ Tay 3D Tư Tưởng Hồ Chí Minh</sub>
 
 </div>
