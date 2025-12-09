@@ -37,7 +37,7 @@ Dự án sử dụng **React**, **Vite**, **Three.js** và nhiều công nghệ 
 
 <div align="center">
 
-| <img src="https://media.baothaibinh.com.vn/upload/news/5_2012/9156_1.jpg" width="500"/> | <img src="https://businesswiki.codx.vn/chu-ky-cua-bac-ho/" width="500"/> | <img src="https://baonamdinh.vn/file/e7837c02816d130b0181a995d7ad7e96/dataimages/201604/original/images1247125_1.jpg" width="500"/> |
+| <img src="https://media.baothaibinh.com.vn/upload/news/5_2012/9156_1.jpg" width="500"/> | <img src="https://chukyphongthuy.vn/wp-content/uploads/Chu-ky-cua-bac-ho-nguoi-lanh-tu-tam-tai-cua-viet-nam.jpg" width="500"/> | <img src="https://baonamdinh.vn/file/e7837c02816d130b0181a995d7ad7e96/dataimages/201604/original/images1247125_1.jpg" width="500"/> |
 |:---:|:---:|:---:|
 | *Bác Hồ với thiếu nhi* | *Chân dung và chữ ký* | *Tượng đài Bác Hồ* |
 
